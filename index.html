@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yanbo Li — Projects</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #fafafa;
+      --surface: #ffffff;
+      --border: #e5e7eb;
+      --text-primary: #111827;
+      --text-secondary: #6b7280;
+      --accent: #2563eb;
+      --accent-light: #eff6ff;
+      --tag-bg: #f3f4f6;
+      --tag-text: #374151;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.6;
+      padding: 0 1rem;
+    }
+
+    header {
+      max-width: 900px;
+      margin: 4rem auto 3rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 2rem;
+    }
+
+    header h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.5px; }
+
+    header p { margin-top: 0.5rem; color: var(--text-secondary); font-size: 1.05rem; }
+
+    .contact-links {
+      margin-top: 1rem;
+      display: flex;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    .contact-links a {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .contact-links a:hover { text-decoration: underline; }
+
+    .section-title {
+      max-width: 900px;
+      margin: 0 auto 1.25rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-secondary);
+    }
+
+    /* Company grouping */
+    .company-block {
+      max-width: 900px;
+      margin: 0 auto 3.5rem;
+    }
+
+    .company-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .company-name {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .company-meta {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+      gap: 1rem;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      transition: box-shadow 0.15s;
+    }
+
+    .card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.07); }
+
+    .card-title { font-size: 0.95rem; font-weight: 600; }
+
+    .card-desc {
+      color: var(--text-secondary);
+      font-size: 0.875rem;
+      line-height: 1.55;
+    }
+
+    .card-highlights {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .card-highlights li {
+      font-size: 0.825rem;
+      color: var(--text-secondary);
+      padding-left: 1rem;
+      position: relative;
+      margin-bottom: 0.2rem;
+    }
+
+    .card-highlights li::before {
+      content: "·";
+      position: absolute;
+      left: 0.2rem;
+      color: var(--accent);
+      font-weight: bold;
+    }
+
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-top: auto;
+      padding-top: 0.4rem;
+    }
+
+    .tag {
+      background: var(--tag-bg);
+      color: var(--tag-text);
+      font-size: 0.72rem;
+      font-weight: 500;
+      padding: 0.15rem 0.55rem;
+      border-radius: 999px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 0 3rem;
+      color: var(--text-secondary);
+      font-size: 0.82rem;
+      border-top: 1px solid var(--border);
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 480px) {
+      header h1 { font-size: 1.5rem; }
+      .projects { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Yanbo Li</h1>
+    <p>Software Engineer · Distributed Systems &amp; Cloud Infrastructure</p>
+    <nav class="contact-links">
+      <a href="https://github.com/lemo2333" target="_blank">GitHub</a>
+      <a href="mailto:bolee19930626@gmail.com">Email</a>
+    </nav>
+  </header>
+
+  <p class="section-title">Work Experience</p>
+
+  <!-- Oracle -->
+  <section class="company-block">
+    <div class="company-header">
+      <span class="company-name">Oracle</span>
+      <span class="company-meta">Software Engineer · Spectra Messaging Service (SMS)</span>
+    </div>
+
+    <div class="projects">
+
+      <!-- Project 1: SMS Core -->
+      <article class="card">
+        <h2 class="card-title">Spectra Messaging Service — Core Platform</h2>
+        <p class="card-desc">
+          Cloud-native pub/sub messaging service built on OCI Streams, serving as the backbone for inter-service communication across Oracle Fusion Applications. Evolved the architecture from single-tenant to multi-tenant multiplexed design (v1 → v4).
+        </p>
+        <ul class="card-highlights">
+          <li>Designed Subscription Manager, Channel Service, and Resource Manager microservices</li>
+          <li>Integrated with OCI Streams via K8s Operator for dynamic stream provisioning</li>
+          <li>Supported multi-tenant isolation with shared underlying stream infrastructure</li>
+        </ul>
+        <div class="card-tags">
+          <span class="tag">Java</span>
+          <span class="tag">Kubernetes</span>
+          <span class="tag">OCI Streams</span>
+          <span class="tag">gRPC</span>
+          <span class="tag">Microservices</span>
+        </div>
+      </article>
+
+      <!-- Project 2: Stream Multiplexing -->
+      <article class="card">
+        <h2 class="card-title">Stream Multiplexing Engine (v4)</h2>
+        <p class="card-desc">
+          Designed and implemented a 4-phase stream multiplexing algorithm that dynamically allocates virtual channels onto physical OCI Streams, maximizing stream reuse while preventing noisy-neighbor issues.
+        </p>
+        <ul class="card-highlights">
+          <li>4-phase algorithm: DB lookup → sorted pool traversal → capacity quick-check → real-time metrics analysis</li>
+          <li>Dual-threshold utilization formula combining allocated bandwidth (×0.5 weight) with actual OCI metrics</li>
+          <li>Merged Resource Manager into Subscription Manager, eliminating unnecessary gRPC hops and reducing latency</li>
+          <li>Added virtual partitioning (3ⁿ expansion) for fine-grained throughput scaling per tenant</li>
+        </ul>
+        <div class="card-tags">
+          <span class="tag">Algorithm Design</span>
+          <span class="tag">OCI Streams</span>
+          <span class="tag">gRPC</span>
+          <span class="tag">Java</span>
+          <span class="tag">Distributed Systems</span>
+        </div>
+      </article>
+
+      <!-- Project 3: Object Storage Rehydration -->
+      <article class="card">
+        <h2 class="card-title">Object Storage Auto-Rehydration</h2>
+        <p class="card-desc">
+          Built a self-healing disaster recovery mechanism for the SMS control plane's object storage layer. Enables the system to automatically detect and recover from bucket deletion or corruption without manual intervention.
+        </p>
+        <ul class="card-highlights">
+          <li>Introduced marker-file design (db.marker) to detect accidental RocksDB resets on startup</li>
+          <li>Implemented consumer table rehydration with failover/fallback sequence diagrams</li>
+          <li>Covered operator error, DR failover, and regional failure scenarios</li>
+          <li>Designed physical channel metadata re-push to object storage from FADB source of truth</li>
+        </ul>
+        <div class="card-tags">
+          <span class="tag">Disaster Recovery</span>
+          <span class="tag">RocksDB</span>
+          <span class="tag">OCI Object Storage</span>
+          <span class="tag">Java</span>
+        </div>
+      </article>
+
+      <!-- Project 4: Rate Limiting -->
+      <article class="card">
+        <h2 class="card-title">API Rate Limiting Framework</h2>
+        <p class="card-desc">
+          Designed and implemented a per-customer, per-endpoint rate limiting framework for all SMS control plane APIs, protecting shared infrastructure from noisy tenants while maintaining low-latency enforcement.
+        </p>
+        <ul class="card-highlights">
+          <li>JAX-RS ContainerRequestFilter intercepts every request and resolves customer-id/channel/subscription from URI</li>
+          <li>Token bucket algorithm backed by Caffeine cache (TTL: 300s) for atomic increment/ALLOW/DENY decisions</li>
+          <li>Policy store via YAML config under Helm values — supports path prefix matching and method-specific overrides</li>
+          <li>Metrics and alerting for top offenders and backend latency (p95/p99 SLO tracking)</li>
+        </ul>
+        <div class="card-tags">
+          <span class="tag">Java</span>
+          <span class="tag">JAX-RS</span>
+          <span class="tag">Caffeine</span>
+          <span class="tag">Token Bucket</span>
+          <span class="tag">Kubernetes</span>
+        </div>
+      </article>
+
+      <!-- Project 5: NACK -->
+      <article class="card">
+        <h2 class="card-title">NACK — Message Redelivery Support</h2>
+        <p class="card-desc">
+          Designed at-least-once delivery semantics for SMS consumers by introducing negative acknowledgement (NACK) support. Enables consumers to signal processing failures and receive the previous batch for reprocessing.
+        </p>
+        <ul class="card-highlights">
+          <li>Checkpoint table in DataDemux tracks last non-committed batch offset per consumer</li>
+          <li>On NACK, DataDemux fetches previous batch from RocksDB via gRPC and redelivers to client</li>
+          <li>Changed internalAck timing to stream before Msgs response to support NACK semantics correctly</li>
+          <li>MsgAsyncQueue work item triggers demuxBatch re-dispatch on negative ack</li>
+        </ul>
+        <div class="card-tags">
+          <span class="tag">Distributed Messaging</span>
+          <span class="tag">gRPC</span>
+          <span class="tag">RocksDB</span>
+          <span class="tag">At-Least-Once Delivery</span>
+        </div>
+      </article>
+
+      <!-- Project 6: Self-Recovery -->
+      <article class="card">
+        <h2 class="card-title">Self-Recovery Monitoring Service</h2>
+        <p class="card-desc">
+          Designed an autonomous cluster recovery framework that monitors SMS components for anomalies and executes multi-stage recovery flows via a code-pluggable state machine, eliminating manual incident response for known failure modes.
+        </p>
+        <ul class="card-highlights">
+          <li>State machine persisted to FADB so recovery can resume after monitoring service restart</li>
+          <li>Pluggable event and action framework — easy to add new failure scenarios without core changes</li>
+          <li>9-stage recovery flow covering stream loss, channel/subscription cleanup, consumer offset reset, and API restart</li>
+          <li>Kubernetes readiness check gates the final recovery declaration</li>
+        </ul>
+        <div class="card-tags">
+          <span class="tag">State Machine</span>
+          <span class="tag">Kubernetes</span>
+          <span class="tag">Observability</span>
+          <span class="tag">Java</span>
+          <span class="tag">Resilience</span>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <footer>
+    <p>lemo2333.github.io · Updated June 2026</p>
+  </footer>
+
+</body>
+</html>
