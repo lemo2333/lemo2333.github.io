@@ -1,107 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Yanbo Li — Projects</title>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --bg: #fafafa; --surface: #fff; --border: #e5e7eb;
-      --text: #111827; --muted: #6b7280; --accent: #2563eb;
-      --accent-light: #eff6ff; --tag-bg: #f3f4f6; --tag-text: #374151;
-    }
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 0 1rem; }
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Yanbo Li — Projects</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#f9fafb;--sur:#fff;--bd:#e5e7eb;--txt:#111827;--mut:#6b7280;--acc:#2563eb;--tag:#f3f4f6}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--txt);line-height:1.6;padding:0 1rem}
 
-    /* ── Header ── */
-    header { max-width: 900px; margin: 4rem auto 3rem; border-bottom: 1px solid var(--border); padding-bottom: 2rem; }
-    header h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.5px; }
-    header p { margin-top: .5rem; color: var(--muted); font-size: 1.05rem; }
-    .links { margin-top: 1rem; display: flex; gap: 1.25rem; }
-    .links a { color: var(--accent); text-decoration: none; font-size: .9rem; font-weight: 500; }
-    .links a:hover { text-decoration: underline; }
+header{max-width:920px;margin:4rem auto 3rem;border-bottom:1px solid var(--bd);padding-bottom:2rem}
+header h1{font-size:2rem;font-weight:800;letter-spacing:-.5px}
+header p{margin-top:.4rem;color:var(--mut);font-size:1.05rem}
+.links{margin-top:1rem;display:flex;gap:1.2rem}
+.links a{color:var(--acc);text-decoration:none;font-size:.9rem;font-weight:500}
+.links a:hover{text-decoration:underline}
 
-    /* ── Section ── */
-    .section-title { max-width: 900px; margin: 0 auto 1.25rem; font-size: .75rem; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
-    .company-block { max-width: 900px; margin: 0 auto 3.5rem; }
-    .company-header { display: flex; align-items: center; gap: .75rem; margin-bottom: 1rem; padding-bottom: .75rem; border-bottom: 1px solid var(--border); }
-    .company-name { font-size: 1rem; font-weight: 600; }
-    .company-meta { font-size: .85rem; color: var(--muted); }
+.sec-label{max-width:920px;margin:0 auto 1.2rem;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--mut)}
+.co-block{max-width:920px;margin:0 auto 3.5rem}
+.co-hdr{display:flex;align-items:center;gap:.75rem;margin-bottom:1rem;padding-bottom:.75rem;border-bottom:1px solid var(--bd)}
+.co-name{font-size:1rem;font-weight:700}
+.co-meta{font-size:.85rem;color:var(--mut)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(380px,1fr));gap:1rem}
 
-    /* ── Cards ── */
-    .projects { display: grid; grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); gap: 1rem; }
-    .card {
-      background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
-      padding: 1.4rem; display: flex; flex-direction: column; gap: .6rem;
-      cursor: pointer; transition: box-shadow .15s, border-color .15s;
-    }
-    .card:hover { box-shadow: 0 4px 20px rgba(0,0,0,.09); border-color: #c7d2fe; }
-    .card-title { font-size: .95rem; font-weight: 600; }
-    .card-desc { color: var(--muted); font-size: .875rem; line-height: 1.55; }
-    .card-highlights { list-style: none; }
-    .card-highlights li { font-size: .82rem; color: var(--muted); padding-left: 1rem; position: relative; margin-bottom: .2rem; }
-    .card-highlights li::before { content: "·"; position: absolute; left: .2rem; color: var(--accent); font-weight: bold; }
-    .card-tags { display: flex; flex-wrap: wrap; gap: .35rem; margin-top: auto; padding-top: .4rem; }
-    .tag { background: var(--tag-bg); color: var(--tag-text); font-size: .72rem; font-weight: 500; padding: .15rem .55rem; border-radius: 999px; }
-    .card-cta { font-size: .78rem; color: var(--accent); font-weight: 500; margin-top: .2rem; }
+.card{background:var(--sur);border:1px solid var(--bd);border-radius:12px;padding:1.5rem;display:flex;flex-direction:column;gap:.6rem;cursor:pointer;transition:box-shadow .15s,border-color .15s}
+.card:hover{box-shadow:0 4px 24px rgba(0,0,0,.09);border-color:#93c5fd}
+.card h2{font-size:.95rem;font-weight:700}
+.card-desc{color:var(--mut);font-size:.875rem;line-height:1.55}
+.bl{list-style:none}
+.bl li{font-size:.82rem;color:var(--mut);padding-left:1rem;position:relative;margin-bottom:.25rem}
+.bl li::before{content:"·";position:absolute;left:.2rem;color:var(--acc);font-weight:bold}
+.tags{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:auto;padding-top:.5rem}
+.tag{background:var(--tag);color:#374151;font-size:.72rem;font-weight:500;padding:.15rem .55rem;border-radius:999px}
+.card-cta{font-size:.78rem;color:var(--acc);font-weight:600}
 
-    /* ── Modal overlay ── */
-    .modal-overlay {
-      display: none; position: fixed; inset: 0; background: rgba(0,0,0,.45);
-      z-index: 100; align-items: flex-start; justify-content: center;
-      padding: 2rem 1rem; overflow-y: auto;
-    }
-    .modal-overlay.open { display: flex; }
+/* Modal */
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:100;overflow-y:auto;padding:2rem 1rem}
+.overlay.open{display:block}
+.modal{background:var(--sur);border-radius:16px;max-width:900px;margin:0 auto;padding:2.5rem;position:relative;box-shadow:0 20px 60px rgba(0,0,0,.2)}
+.modal-x{position:absolute;top:1.2rem;right:1.2rem;background:var(--tag);border:none;border-radius:50%;width:34px;height:34px;font-size:1rem;cursor:pointer;color:var(--mut);display:flex;align-items:center;justify-content:center}
+.modal-x:hover{background:var(--bd)}
+.m-sub{font-size:.8rem;color:var(--mut);margin-bottom:.35rem;text-transform:uppercase;letter-spacing:.06em;font-weight:600}
+.m-title{font-size:1.5rem;font-weight:800;letter-spacing:-.5px;margin-bottom:2rem}
 
-    .modal {
-      background: var(--surface); border-radius: 14px; width: 100%; max-width: 860px;
-      padding: 2rem; position: relative; margin: auto;
-      box-shadow: 0 20px 60px rgba(0,0,0,.2);
-    }
+.ms{margin-bottom:2.5rem}
+.ms-lbl{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:var(--mut);margin-bottom:.9rem;display:flex;align-items:center;gap:.6rem}
+.ms-lbl::before{content:"";display:inline-block;width:20px;height:2px;background:var(--acc)}
+.ms-body{font-size:.9rem;color:#374151;line-height:1.72}
+.ms-body+.ms-body{margin-top:.6rem}
 
-    .modal-close {
-      position: absolute; top: 1rem; right: 1rem;
-      background: var(--tag-bg); border: none; border-radius: 50%;
-      width: 32px; height: 32px; font-size: 1.1rem; cursor: pointer;
-      display: flex; align-items: center; justify-content: center; color: var(--muted);
-    }
-    .modal-close:hover { background: var(--border); color: var(--text); }
+.num-list{list-style:none;margin-top:.6rem}
+.num-list li{display:flex;gap:.75rem;margin-bottom:.9rem;align-items:flex-start}
+.num{min-width:22px;height:22px;background:var(--acc);color:#fff;font-size:.72rem;font-weight:800;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:.15rem}
+.nl-title{font-size:.875rem;font-weight:700;color:#0f172a}
+.nl-desc{font-size:.8rem;color:var(--mut);line-height:1.5}
 
-    .modal h2 { font-size: 1.3rem; font-weight: 700; margin-bottom: .4rem; }
-    .modal .modal-subtitle { font-size: .85rem; color: var(--muted); margin-bottom: 1.5rem; }
+.diag{background:#f8fafc;border:1px solid var(--bd);border-radius:10px;padding:1.25rem;margin-top:.75rem;overflow:hidden}
+.diag svg{width:100%;height:auto;display:block}
+.diag-cap{font-size:.75rem;color:var(--mut);margin-top:.5rem;text-align:center}
 
-    .modal-section { margin-bottom: 1.8rem; }
-    .modal-section-title {
-      font-size: .7rem; font-weight: 700; text-transform: uppercase;
-      letter-spacing: .08em; color: var(--muted); margin-bottom: .75rem;
-    }
+.role-box{background:#eff6ff;border-left:3px solid var(--acc);border-radius:0 8px 8px 0;padding:1rem 1.25rem;font-size:.875rem;color:#1e40af;line-height:1.65;margin-top:.5rem}
+.future-list{list-style:none;margin-top:.5rem}
+.future-list li{font-size:.875rem;color:#374151;padding-left:1.2rem;position:relative;margin-bottom:.5rem;line-height:1.6}
+.future-list li::before{content:"→";position:absolute;left:0;color:var(--acc);font-size:.8rem;top:.05rem}
+.faq{margin-top:.5rem}
+.faq-item{margin-bottom:1.1rem}
+.faq-q{font-size:.875rem;font-weight:700;color:#0f172a;margin-bottom:.3rem}
+.faq-a{font-size:.85rem;color:#475569;line-height:1.65}
 
-    .modal-text { font-size: .875rem; color: #374151; line-height: 1.7; margin-bottom: .75rem; }
-
-    .modal-bullets { list-style: none; }
-    .modal-bullets li { font-size: .875rem; color: #374151; padding-left: 1.1rem; position: relative; margin-bottom: .4rem; line-height: 1.6; }
-    .modal-bullets li::before { content: "→"; position: absolute; left: 0; color: var(--accent); font-size: .75rem; top: .22rem; }
-
-    /* Diagram gallery */
-    .diagram-gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: .75rem; }
-    .diagram-item { position: relative; border-radius: 8px; overflow: hidden; border: 1px solid var(--border); cursor: zoom-in; }
-    .diagram-item img { width: 100%; display: block; transition: opacity .15s; }
-    .diagram-item:hover img { opacity: .9; }
-    .diagram-caption { font-size: .73rem; color: var(--muted); padding: .4rem .6rem; background: var(--tag-bg); }
-
-    /* Lightbox */
-    .lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.88); z-index: 200; align-items: center; justify-content: center; padding: 1rem; cursor: zoom-out; }
-    .lightbox.open { display: flex; }
-    .lightbox img { max-width: 100%; max-height: 90vh; border-radius: 8px; object-fit: contain; }
-
-    footer { text-align: center; padding: 2rem 0 3rem; color: var(--muted); font-size: .82rem; border-top: 1px solid var(--border); max-width: 900px; margin: 0 auto; }
-
-    @media (max-width: 520px) {
-      header h1 { font-size: 1.5rem; }
-      .projects { grid-template-columns: 1fr; }
-      .diagram-gallery { grid-template-columns: 1fr; }
-    }
-  </style>
+footer{text-align:center;padding:2rem 0 3rem;color:var(--mut);font-size:.82rem;border-top:1px solid var(--bd);max-width:920px;margin:0 auto}
+@media(max-width:580px){header h1{font-size:1.5rem}.grid{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
 
@@ -114,85 +83,60 @@
   </nav>
 </header>
 
-<p class="section-title">Work Experience</p>
-
-<section class="company-block">
-  <div class="company-header">
-    <span class="company-name">Oracle</span>
-    <span class="company-meta">Software Engineer · Spectra Messaging Service (SMS)</span>
+<p class="sec-label">Work Experience</p>
+<section class="co-block">
+  <div class="co-hdr">
+    <span class="co-name">Oracle</span>
+    <span class="co-meta">Software Engineer · Spectra Messaging Service (SMS)</span>
   </div>
-  <div class="projects">
+  <div class="grid">
 
-    <article class="card" onclick="openModal('sms-core')">
-      <h2 class="card-title">Spectra Messaging Service — Core Platform</h2>
-      <p class="card-desc">Cloud-native pub/sub messaging service on OCI Streams — evolved from single-tenant to multi-tenant multiplexed architecture (v1 → v4).</p>
-      <ul class="card-highlights">
-        <li>Designed Subscription Manager, Channel Service, Resource Manager microservices</li>
-        <li>K8s Operator for dynamic OCI Stream provisioning</li>
-        <li>Multi-tenant isolation on shared stream infrastructure</li>
-      </ul>
-      <div class="card-tags"><span class="tag">Java</span><span class="tag">Kubernetes</span><span class="tag">OCI Streams</span><span class="tag">gRPC</span></div>
-      <p class="card-cta">View architecture &amp; diagrams →</p>
+    <article class="card" onclick="openModal('core')">
+      <h2>Spectra Messaging Service — Core Platform</h2>
+      <p class="card-desc">Cloud-native pub/sub messaging platform on OCI Streams — evolved from single-tenant to multi-tenant multiplexed architecture across 4 major versions.</p>
+      <ul class="bl"><li>Subscription Manager, Channel Service, Resource Manager microservices</li><li>K8s Operator for dynamic OCI Stream provisioning</li><li>Multi-tenant isolation on shared stream substrate</li></ul>
+      <div class="tags"><span class="tag">Java</span><span class="tag">Kubernetes</span><span class="tag">OCI Streams</span><span class="tag">gRPC</span></div>
+      <p class="card-cta">Deep dive →</p>
     </article>
 
-    <article class="card" onclick="openModal('multiplex')">
-      <h2 class="card-title">Stream Multiplexing Engine (v4)</h2>
-      <p class="card-desc">4-phase algorithm that multiplexes virtual channels onto physical OCI Streams, merged Resource Manager into Subscription Manager, added virtual partitioning.</p>
-      <ul class="card-highlights">
-        <li>Dual-threshold utilization formula: allocated ×0.5 + real-time OCI metrics</li>
-        <li>Eliminated unnecessary gRPC hop — direct REST → OCI SDK path</li>
-        <li>Virtual partitioning with 3ⁿ expansion for fine-grained tenant throughput</li>
-      </ul>
-      <div class="card-tags"><span class="tag">Algorithm Design</span><span class="tag">OCI Streams</span><span class="tag">gRPC</span><span class="tag">Java</span></div>
-      <p class="card-cta">View architecture &amp; diagrams →</p>
+    <article class="card" onclick="openModal('mux')">
+      <h2>Stream Multiplexing Engine (v4)</h2>
+      <p class="card-desc">4-phase algorithm multiplexing N virtual channels onto M physical OCI Streams; merged Resource Manager to eliminate a gRPC hop on the critical path.</p>
+      <ul class="bl"><li>Dual-threshold utilization formula (allocated × 0.5 + live OCI metrics)</li><li>O(1) early-exit capacity check before expensive metrics fetch</li><li>3ⁿ virtual partitioning for per-tenant throughput scaling</li></ul>
+      <div class="tags"><span class="tag">Algorithm Design</span><span class="tag">OCI Streams</span><span class="tag">Java</span><span class="tag">gRPC</span></div>
+      <p class="card-cta">Deep dive →</p>
     </article>
 
-    <article class="card" onclick="openModal('rehydration')">
-      <h2 class="card-title">Object Storage Auto-Rehydration</h2>
-      <p class="card-desc">Self-healing disaster recovery for the control plane's object storage layer — auto-detects and recovers from bucket deletion or corruption without manual intervention.</p>
-      <ul class="card-highlights">
-        <li>Marker-file (db.marker) design to detect RocksDB reset on startup</li>
-        <li>Consumer table rehydration: failover/fallback sequence</li>
-        <li>Covers operator error, DR failover, and regional failure scenarios</li>
-      </ul>
-      <div class="card-tags"><span class="tag">Disaster Recovery</span><span class="tag">RocksDB</span><span class="tag">OCI Object Storage</span><span class="tag">Java</span></div>
-      <p class="card-cta">View architecture &amp; diagrams →</p>
+    <article class="card" onclick="openModal('rehy')">
+      <h2>Object Storage Auto-Rehydration</h2>
+      <p class="card-desc">Self-healing disaster recovery for the control plane — auto-detects and recovers from OCI bucket deletion or corruption with zero manual intervention.</p>
+      <ul class="bl"><li>Marker-file design to detect RocksDB reset on startup</li><li>Consumer table rehydration across failover / fallback scenarios</li><li>Covers operator error, DR events, and regional failures</li></ul>
+      <div class="tags"><span class="tag">Disaster Recovery</span><span class="tag">RocksDB</span><span class="tag">OCI Object Storage</span></div>
+      <p class="card-cta">Deep dive →</p>
     </article>
 
-    <article class="card" onclick="openModal('ratelimit')">
-      <h2 class="card-title">API Rate Limiting Framework</h2>
-      <p class="card-desc">Per-customer, per-endpoint rate limiting across all SMS control plane APIs using token bucket algorithm in JAX-RS interceptor layer.</p>
-      <ul class="card-highlights">
-        <li>ContainerRequestFilter extracts customer-id / channel / subscription from URI</li>
-        <li>Caffeine cache (TTL 300s) for atomic ALLOW/DENY decisions</li>
-        <li>YAML-based policy store under Helm values — supports prefix matching</li>
-      </ul>
-      <div class="card-tags"><span class="tag">Java</span><span class="tag">JAX-RS</span><span class="tag">Caffeine</span><span class="tag">Token Bucket</span></div>
-      <p class="card-cta">View architecture &amp; diagrams →</p>
+    <article class="card" onclick="openModal('rl')">
+      <h2>API Rate Limiting Framework</h2>
+      <p class="card-desc">Per-customer, per-endpoint token bucket rate limiting for all SMS control plane APIs via JAX-RS ContainerRequestFilter + Caffeine cache.</p>
+      <ul class="bl"><li>Policy store via YAML/Helm — prefix matching + method overrides</li><li>Atomic ALLOW/DENY with 300s TTL Caffeine token bucket</li><li>p95/p99 SLO alerting on top offenders and backend latency</li></ul>
+      <div class="tags"><span class="tag">Java</span><span class="tag">JAX-RS</span><span class="tag">Caffeine</span><span class="tag">Token Bucket</span></div>
+      <p class="card-cta">Deep dive →</p>
     </article>
 
     <article class="card" onclick="openModal('nack')">
-      <h2 class="card-title">NACK — Message Redelivery Support</h2>
-      <p class="card-desc">At-least-once delivery semantics via negative acknowledgement — consumers signal processing failures and receive the previous batch for reprocessing.</p>
-      <ul class="card-highlights">
-        <li>Checkpoint table tracks last non-committed batch offset per consumer</li>
-        <li>On NACK: DataDemux fetches prev batch from RocksDB and redelivers via gRPC</li>
-        <li>MsgAsyncQueue work item triggers demuxBatch re-dispatch on nack</li>
-      </ul>
-      <div class="card-tags"><span class="tag">Distributed Messaging</span><span class="tag">gRPC</span><span class="tag">RocksDB</span><span class="tag">At-Least-Once</span></div>
-      <p class="card-cta">View architecture &amp; diagrams →</p>
+      <h2>NACK — Message Redelivery</h2>
+      <p class="card-desc">At-least-once delivery via negative acknowledgement — consumers signal processing failures and receive the previous batch for reprocessing.</p>
+      <ul class="bl"><li>Checkpoint table in DataDemux tracks last non-committed batch offset</li><li>On NACK: RocksDB lookup → redeliver prev batch via gRPC</li><li>internalAck timing change to support correct NACK semantics</li></ul>
+      <div class="tags"><span class="tag">Distributed Messaging</span><span class="tag">gRPC</span><span class="tag">RocksDB</span><span class="tag">At-Least-Once</span></div>
+      <p class="card-cta">Deep dive →</p>
     </article>
 
-    <article class="card" onclick="openModal('recovery')">
-      <h2 class="card-title">Self-Recovery Monitoring Service</h2>
-      <p class="card-desc">Autonomous cluster recovery framework — code-pluggable state machine monitors SMS components for anomalies and executes 9-stage recovery flows automatically.</p>
-      <ul class="card-highlights">
-        <li>State machine persisted to FADB — survives monitoring service restart</li>
-        <li>Pluggable event + action framework for easy extension</li>
-        <li>Kubernetes readiness check gates final recovery declaration</li>
-      </ul>
-      <div class="card-tags"><span class="tag">State Machine</span><span class="tag">Kubernetes</span><span class="tag">Observability</span><span class="tag">Java</span></div>
-      <p class="card-cta">View architecture &amp; diagrams →</p>
+    <article class="card" onclick="openModal('rec')">
+      <h2>Self-Recovery Monitoring Service</h2>
+      <p class="card-desc">Autonomous cluster recovery — code-pluggable state machine monitors SMS for anomalies and executes 9-stage recovery flows without operator intervention.</p>
+      <ul class="bl"><li>Recovery state persisted to FADB — survives monitoring service restart</li><li>Pluggable event + action framework for easy extension</li><li>K8s readiness check gates final recovery declaration</li></ul>
+      <div class="tags"><span class="tag">State Machine</span><span class="tag">Kubernetes</span><span class="tag">Observability</span><span class="tag">Java</span></div>
+      <p class="card-cta">Deep dive →</p>
     </article>
 
   </div>
@@ -200,337 +144,875 @@
 
 <footer><p>lemo2333.github.io · Updated June 2026</p></footer>
 
-<!-- ═══════════════ MODALS ═══════════════ -->
+<!-- ══════════ MODAL 1: SMS Core ══════════ -->
+<div class="overlay" id="overlay-core">
+<div class="modal">
+<button class="modal-x" onclick="closeModal('core')">✕</button>
+<p class="m-sub">Oracle · Spectra Messaging Service</p>
+<h2 class="m-title">Spectra Messaging Service — Core Platform</h2>
 
-<!-- SMS Core -->
-<div class="modal-overlay" id="modal-sms-core">
-  <div class="modal">
-    <button class="modal-close" onclick="closeModal('sms-core')">✕</button>
-    <h2>Spectra Messaging Service — Core Platform</h2>
-    <p class="modal-subtitle">Oracle · Distributed Messaging Infrastructure</p>
-
-    <div class="modal-section">
-      <p class="modal-section-title">Overview</p>
-      <p class="modal-text">SMS is a cloud-native pub/sub messaging service built on top of OCI Streams (Oracle's managed Kafka-compatible service). It serves as the messaging backbone for Oracle Fusion Applications, abstracting stream provisioning, channel lifecycle management, and subscription routing behind a clean REST API.</p>
-      <p class="modal-text">The architecture evolved across four major versions: from a single-tenant Phase-1 design to a fully multi-tenant multiplexed system in v4, while maintaining backward compatibility throughout.</p>
-    </div>
-
-    <div class="modal-section">
-      <p class="modal-section-title">Key Components</p>
-      <ul class="modal-bullets">
-        <li><strong>Subscription Manager</strong> — control plane service managing channel lifecycle and subscription CRUD. Consumers create subscriptions; producers create channels. Tracks resource scale requirements.</li>
-        <li><strong>Resource Manager</strong> — allocates and manages underlying OCI Stream scale units, interfacing with K8s Operator for dynamic provisioning.</li>
-        <li><strong>K8s Operator</strong> — bridges the control plane to OCI Streams, handling stream creation, deletion, and scaling in response to resource manager signals.</li>
-        <li><strong>Messaging Data Plane</strong> — CtrlDemux + DataDemux services handle actual publish/consume operations at runtime, routing messages between producers/consumers and the OCI Streams substrate.</li>
-        <li><strong>SPECTRA PUB/SUB Connector Lib</strong> — client-side library for producers and consumers to interact with SMS Open API.</li>
-      </ul>
-    </div>
-
-    <div class="modal-section">
-      <p class="modal-section-title">Architecture Diagram</p>
-      <div class="diagram-gallery">
-        <div class="diagram-item" onclick="openLightbox('assets/sms-core.jpg')">
-          <img src="assets/sms-core.jpg" alt="SMS Single Tenant Logical Architecture" loading="lazy" />
-          <div class="diagram-caption">Single Tenant Logical Architecture (Phase 1)</div>
-        </div>
-        <div class="diagram-item" onclick="openLightbox('assets/multiplex-0.jpg')">
-          <img src="assets/multiplex-0.jpg" alt="SMS Multiplex v2 Architecture" loading="lazy" />
-          <div class="diagram-caption">Multi-Tenant Multiplex Architecture (v2)</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="modal-section">
-      <p class="modal-section-title">SLO &amp; Observability</p>
-      <div class="diagram-gallery">
-        <div class="diagram-item" onclick="openLightbox('assets/slo-0.jpg')">
-          <img src="assets/slo-0.jpg" alt="SLO Tracking" loading="lazy" />
-          <div class="diagram-caption">End-to-End Latency SLOs — p95 &lt;500ms, p99 &lt;1000ms (Nack/messages)</div>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="ms">
+<p class="ms-lbl">Problem Statement</p>
+<p class="ms-body">Oracle Fusion Applications needed a unified pub/sub messaging backbone for inter-service communication across thousands of tenants. Each team integrating directly with OCI Streams duplicated auth, stream provisioning, retry logic, and SLA enforcement. We built SMS as a managed messaging layer that abstracts all substrate complexity behind a clean channel-subscription REST API.</p>
 </div>
 
-<!-- Multiplexing -->
-<div class="modal-overlay" id="modal-multiplex">
-  <div class="modal">
-    <button class="modal-close" onclick="closeModal('multiplex')">✕</button>
-    <h2>Stream Multiplexing Engine (v4)</h2>
-    <p class="modal-subtitle">Oracle · Spectra Messaging Service</p>
-
-    <div class="modal-section">
-      <p class="modal-section-title">Problem</p>
-      <p class="modal-text">In early SMS versions, each logical channel mapped 1:1 to a physical OCI Stream. This was wasteful — OCI Streams have fixed cost regardless of utilization. As tenants scaled, we needed to multiplex multiple channels onto shared streams while ensuring fair bandwidth allocation and preventing noisy-neighbor issues.</p>
-    </div>
-
-    <div class="modal-section">
-      <p class="modal-section-title">4-Phase Multiplexing Algorithm</p>
-      <ul class="modal-bullets">
-        <li><strong>Phase 1 — DB Lookup:</strong> Retrieve existing stream pool sorted by allocated bandwidth (ascending).</li>
-        <li><strong>Phase 2 — Sorted Pool Traversal:</strong> Walk streams from least-to-most allocated; find candidates below capacity threshold.</li>
-        <li><strong>Phase 3 — Quick Capacity Check:</strong> O(1) early exit — if least-allocated stream can't fit the request, reject immediately without expensive metrics calls.</li>
-        <li><strong>Phase 4 — Real-Time Metrics Analysis:</strong> Dual-threshold formula: <code>utilization = (allocated × 0.5) + actual_OCI_throughput</code>. Both allocated and measured utilization must stay below 80% for a stream to be reused.</li>
-      </ul>
-    </div>
-
-    <div class="modal-section">
-      <p class="modal-section-title">Architecture Simplification</p>
-      <ul class="modal-bullets">
-        <li>Merged Resource Manager into Subscription Manager — removed a gRPC hop from the critical path (REST API → ChannelService → gRPC → ResourceManager → OCI became REST API → ChannelService → OCI SDK directly).</li>
-        <li>Error handling now uses direct OCI error responses instead of translated gRPC status codes — simpler debugging.</li>
-        <li>Virtual Partitioning: each physical partition expands to 3ⁿ virtual partitions, enabling fine-grained per-tenant throughput scaling without provisioning new streams.</li>
-      </ul>
-    </div>
-
-    <div class="modal-section">
-      <p class="modal-section-title">Architecture &amp; Flow Diagrams</p>
-      <div class="diagram-gallery">
-        <div class="diagram-item" onclick="openLightbox('assets/multiplex-1.jpg')">
-          <img src="assets/multiplex-1.jpg" alt="SMS v4 Architecture overview" loading="lazy" />
-          <div class="diagram-caption">v4 Architecture — Merging Resource Manager &amp; Subscription Manager</div>
-        </div>
-        <div class="diagram-item" onclick="openLightbox('assets/multiplex-2.jpg')">
-          <img src="assets/multiplex-2.jpg" alt="Spectra Messaging v4 Architecture diagram" loading="lazy" />
-          <div class="diagram-caption">Spectra Messaging v4 Full Architecture</div>
-        </div>
-        <div class="diagram-item" onclick="openLightbox('assets/multiplex-3.jpg')">
-          <img src="assets/multiplex-3.jpg" alt="Capacity check phases" loading="lazy" />
-          <div class="diagram-caption">Phase 3 &amp; 4 — Quick Capacity Check &amp; Real-Time Metrics Analysis</div>
-        </div>
-        <div class="diagram-item" onclick="openLightbox('assets/multiplex-4.jpg')">
-          <img src="assets/multiplex-4.jpg" alt="Virtual partitioning sequence" loading="lazy" />
-          <div class="diagram-caption">Virtual Partitioning — Channel Creation, Publish &amp; Consume Flow</div>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="ms">
+<p class="ms-lbl">Solution Principles</p>
+<ul class="num-list">
+  <li><span class="num">1</span><div><p class="nl-title">Separation of control and data planes</p><p class="nl-desc">Control plane manages channel/subscription lifecycle and stream allocation. Data plane (CtrlDemux + DataDemux) handles runtime message flow independently — failures in one don't cascade to the other.</p></div></li>
+  <li><span class="num">2</span><div><p class="nl-title">Substrate abstraction via K8s Operator</p><p class="nl-desc">Producers and consumers never interact with OCI Streams directly. The K8s Operator provisions and scales streams transparently in response to Resource Manager signals.</p></div></li>
+  <li><span class="num">3</span><div><p class="nl-title">Logical channels over physical streams</p><p class="nl-desc">A logical channel maps to one or more OCI Stream partitions. In later versions (v2–v4), multiple channels are multiplexed onto shared streams, dramatically reducing cost.</p></div></li>
+  <li><span class="num">4</span><div><p class="nl-title">SPECTRA connector library</p><p class="nl-desc">Client-side SDK abstracts gRPC messaging operations, internal ack semantics, and retry logic so application teams write zero boilerplate.</p></div></li>
+</ul>
 </div>
 
-<!-- Object Storage Rehydration -->
-<div class="modal-overlay" id="modal-rehydration">
-  <div class="modal">
-    <button class="modal-close" onclick="closeModal('rehydration')">✕</button>
-    <h2>Object Storage Auto-Rehydration</h2>
-    <p class="modal-subtitle">Oracle · Spectra Messaging Service — 26.07 Release</p>
+<div class="ms">
+<p class="ms-lbl">Architecture</p>
+<div class="diag">
+<svg viewBox="0 0 760 310" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif">
+<defs><marker id="ah0" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#64748b"/></marker>
+<marker id="ah0g" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#16a34a"/></marker>
+<marker id="ah0b" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#2563eb"/></marker></defs>
 
-    <div class="modal-section">
-      <p class="modal-section-title">Problem</p>
-      <p class="modal-text">The SMS control plane stores critical mapping data — the relationship between logical channels and physical OCI Stream OCIDs — exclusively in object storage. The FADB (Fusion Application Database) maintains channel attributes, but OCID mapping lives only in object storage buckets.</p>
-      <p class="modal-text">When a bucket is accidentally deleted (operator error, regional DR failover, or data corruption), the control plane fails catastrophically while the data plane continues operating unaffected. Without auto-rehydration, recovering this state required lengthy manual intervention and risked data loss.</p>
-    </div>
+<!-- CLIENT GROUP -->
+<rect x="4" y="4" width="160" height="302" rx="8" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.5"/>
+<text x="84" y="20" text-anchor="middle" font-size="9" font-weight="700" fill="#1d4ed8" letter-spacing="1">CLIENTS</text>
+<rect x="18" y="30" width="132" height="46" rx="6" fill="#1d4ed8"/>
+<text x="84" y="50" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">Producer App</text>
+<text x="84" y="65" text-anchor="middle" font-size="9" fill="#bfdbfe">create channel · publish</text>
+<rect x="18" y="250" width="132" height="46" rx="6" fill="#1d4ed8"/>
+<text x="84" y="270" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">Consumer App</text>
+<text x="84" y="285" text-anchor="middle" font-size="9" fill="#bfdbfe">subscribe · receive</text>
 
-    <div class="modal-section">
-      <p class="modal-section-title">Solution Design</p>
-      <ul class="modal-bullets">
-        <li><strong>Marker file (db.marker):</strong> On startup, CtrlDemux checks for a marker file in object storage. If missing, it signals a RocksDB reset / bucket loss and triggers the rehydration pipeline automatically.</li>
-        <li><strong>Physical channel rehydration:</strong> Reads SMS_MT_CHANNEL_DEFS from FADB to get CHANNEL_ID, NAME, RETENTION, PARTITIONS; uses ADDITIONAL_DETAILS to retrieve OCI Stream OCIDs; pushes mapping back to object storage.</li>
-        <li><strong>Consumer table rehydration:</strong> Reads SMS_MT_Consumers FADB table to get subscriptionId, consumerId, batchSize, offset; calls rehydration gRPC endpoint on CtrlDemux to restore object storage consumer state.</li>
-        <li><strong>Failover / Fallback handling:</strong> DemuxBatchObserver in DataDemux listens for DR events and triggers per-subscription or batch rehydration via the rehydration endpoint.</li>
-      </ul>
-    </div>
+<!-- CONTROL PLANE GROUP -->
+<rect x="180" y="4" width="200" height="170" rx="8" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1.5"/>
+<text x="280" y="20" text-anchor="middle" font-size="9" font-weight="700" fill="#15803d" letter-spacing="1">CONTROL PLANE</text>
+<rect x="194" y="30" width="172" height="52" rx="6" fill="#fff" stroke="#22c55e" stroke-width="1.5"/>
+<text x="280" y="52" text-anchor="middle" font-size="12" font-weight="700" fill="#15803d">Subscription Manager</text>
+<text x="280" y="67" text-anchor="middle" font-size="9" fill="#166534">Channel lifecycle · Subscription CRUD</text>
+<line x1="280" y1="82" x2="280" y2="108" stroke="#64748b" stroke-width="1.5" marker-end="url(#ah0)"/>
+<text x="293" y="98" font-size="9" fill="#64748b">allocate</text>
+<rect x="194" y="108" width="172" height="52" rx="6" fill="#fff" stroke="#22c55e" stroke-width="1.5"/>
+<text x="280" y="130" text-anchor="middle" font-size="12" font-weight="700" fill="#15803d">Resource Manager</text>
+<text x="280" y="145" text-anchor="middle" font-size="9" fill="#166534">Stream allocation · Capacity planning</text>
 
-    <div class="modal-section">
-      <p class="modal-section-title">Architecture &amp; Flow Diagrams</p>
-      <div class="diagram-gallery">
-        <div class="diagram-item" onclick="openLightbox('assets/rehydration-0.jpg')">
-          <img src="assets/rehydration-0.jpg" alt="Object Storage Rehydration Design Doc" loading="lazy" />
-          <div class="diagram-caption">Object Storage Rehydration Design — Why Full Rehydration is Required</div>
-        </div>
-        <div class="diagram-item" onclick="openLightbox('assets/rehydration-1.jpg')">
-          <img src="assets/rehydration-1.jpg" alt="Marker file design and Rocks DB" loading="lazy" />
-          <div class="diagram-caption">Marker File Detection &amp; RocksDB Reset Flow (Ctrl Demux)</div>
-        </div>
-        <div class="diagram-item" onclick="openLightbox('assets/rehydration-2.jpg')">
-          <img src="assets/rehydration-2.jpg" alt="Consumer Table Rehydration Failover" loading="lazy" />
-          <div class="diagram-caption">Consumer Table Rehydration — Failover &amp; Fallback Sequence</div>
-        </div>
-        <div class="diagram-item" onclick="openLightbox('assets/rehydration-3.jpg')">
-          <img src="assets/rehydration-3.jpg" alt="Physical channel rehydration payload" loading="lazy" />
-          <div class="diagram-caption">Physical Channel Rehydration — Target Payload Construction</div>
-        </div>
-      </div>
-    </div>
-  </div>
+<!-- SUBSTRATE GROUP -->
+<rect x="180" y="190" width="200" height="116" rx="8" fill="#faf5ff" stroke="#e9d5ff" stroke-width="1.5"/>
+<text x="280" y="206" text-anchor="middle" font-size="9" font-weight="700" fill="#7c3aed" letter-spacing="1">SUBSTRATE</text>
+<rect x="194" y="214" width="80" height="42" rx="6" fill="#fff" stroke="#a855f7" stroke-width="1.5"/>
+<text x="234" y="233" text-anchor="middle" font-size="11" font-weight="700" fill="#7c3aed">K8s Operator</text>
+<text x="234" y="248" text-anchor="middle" font-size="8" fill="#6d28d9">auto-provision</text>
+<line x1="274" y1="235" x2="292" y2="235" stroke="#64748b" stroke-width="1.5" marker-end="url(#ah0)"/>
+<rect x="292" y="214" width="74" height="42" rx="6" fill="#7c3aed"/>
+<text x="329" y="233" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">OCI Streams</text>
+<text x="329" y="248" text-anchor="middle" font-size="8" fill="#e9d5ff">partitions pool</text>
+
+<!-- DATA PLANE GROUP -->
+<rect x="396" y="4" width="360" height="302" rx="8" fill="#fff7ed" stroke="#fed7aa" stroke-width="1.5"/>
+<text x="576" y="20" text-anchor="middle" font-size="9" font-weight="700" fill="#c2410c" letter-spacing="1">DATA PLANE</text>
+<rect x="412" y="32" width="156" height="52" rx="6" fill="#fff" stroke="#f97316" stroke-width="1.5"/>
+<text x="490" y="54" text-anchor="middle" font-size="12" font-weight="700" fill="#c2410c">CtrlDemux</text>
+<text x="490" y="69" text-anchor="middle" font-size="9" fill="#9a3412">Consumer routing · Offset tracking</text>
+<line x1="568" y1="58" x2="592" y2="58" stroke="#64748b" stroke-width="1" stroke-dasharray="4,2" marker-end="url(#ah0)"/>
+<line x1="592" y1="64" x2="568" y2="64" stroke="#64748b" stroke-width="1" stroke-dasharray="4,2" marker-end="url(#ah0)"/>
+<rect x="592" y="32" width="150" height="52" rx="6" fill="#fff" stroke="#f97316" stroke-width="1.5"/>
+<text x="667" y="54" text-anchor="middle" font-size="12" font-weight="700" fill="#c2410c">DataDemux</text>
+<text x="667" y="69" text-anchor="middle" font-size="9" fill="#9a3412">Message batch delivery</text>
+
+<!-- OCI Streams connected to DataDemux -->
+<line x1="366" y1="235" x2="412" y2="200" stroke="#7c3aed" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#ah0)"/>
+<text x="390" y="226" text-anchor="middle" font-size="8" fill="#7c3aed">gRPC</text>
+
+<!-- Labels inside data plane -->
+<rect x="412" y="130" width="326" height="60" rx="6" fill="#fff3e0" stroke="#fb923c" stroke-width="1" stroke-dasharray="4,2"/>
+<text x="575" y="156" text-anchor="middle" font-size="11" font-weight="600" fill="#9a3412">Runtime: Produce &amp; Consume</text>
+<text x="575" y="174" text-anchor="middle" font-size="9" fill="#c2410c">Producer → DataDemux → OCI Streams → DataDemux → Consumer</text>
+
+<rect x="412" y="210" width="326" height="80" rx="6" fill="#fff" stroke="#fed7aa" stroke-width="1"/>
+<text x="575" y="234" text-anchor="middle" font-size="11" font-weight="600" fill="#92400e">SPECTRA Connector Lib</text>
+<text x="575" y="252" text-anchor="middle" font-size="9" fill="#b45309">Client-side SDK for producers and consumers</text>
+<text x="575" y="268" text-anchor="middle" font-size="9" fill="#b45309">Handles gRPC, ack, retry, backpressure</text>
+
+<!-- Arrows from clients to control plane -->
+<line x1="150" y1="53" x2="194" y2="53" stroke="#2563eb" stroke-width="1.5" marker-end="url(#ah0b)"/>
+<text x="172" y="47" text-anchor="middle" font-size="8" fill="#2563eb">REST</text>
+<line x1="150" y1="268" x2="194" y2="140" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="4,2" marker-end="url(#ah0b)"/>
+<text x="158" y="210" text-anchor="middle" font-size="8" fill="#2563eb">REST</text>
+
+<!-- ResMgr → K8s -->
+<line x1="280" y1="174" x2="234" y2="214" stroke="#64748b" stroke-width="1.5" stroke-dasharray="4,2" marker-end="url(#ah0)"/>
+<text x="250" y="198" text-anchor="middle" font-size="8" fill="#64748b">provision</text>
+</svg>
+<p class="diag-cap">SMS high-level architecture — Control Plane manages setup; Data Plane handles runtime message flow</p>
+</div>
 </div>
 
-<!-- Rate Limiting -->
-<div class="modal-overlay" id="modal-ratelimit">
-  <div class="modal">
-    <button class="modal-close" onclick="closeModal('ratelimit')">✕</button>
-    <h2>API Rate Limiting Framework</h2>
-    <p class="modal-subtitle">Oracle · Spectra Messaging Service</p>
-
-    <div class="modal-section">
-      <p class="modal-section-title">Problem</p>
-      <p class="modal-text">SMS operates as a shared multi-tenant service. A single tenant making excessive control plane API calls (channel creation, subscription management, etc.) could degrade performance for all other tenants. No rate-limit enforcement existed at the API layer.</p>
-    </div>
-
-    <div class="modal-section">
-      <p class="modal-section-title">Architecture</p>
-      <ul class="modal-bullets">
-        <li><strong>Entry Point:</strong> Traefik ingress / API Gateway applies blanket rate limits per ingress route.</li>
-        <li><strong>Rate Limiter Interceptor (ContainerRequestFilter):</strong> Intercepts every request per replica. Parses HTTP method, extracts URI path params (customer-id, channel, subscription). Determines applicable rate-limit policy. Computes rate-limit key and checks/consumes tokens from cache.</li>
-        <li><strong>Policy Store:</strong> YAML config loaded via Helm values. Scope key = <code>customer + apiGroup(/channel/|/subscription) + method</code>. Defines limits (requests_per_second, burst). Supports path-prefix matching and method-specific overrides.</li>
-        <li><strong>Caffeine Cache (Token Bucket Backend):</strong> Low-latency in-process cache with 300s TTL for atomic token increments. Returns ALLOW (remaining tokens) or DENY (429 Too Many Requests with retry-after header).</li>
-        <li><strong>Observability:</strong> Metrics per customer/path/method/status. Alerts on spikes, top offenders, backend latency. Audit logs with correlation IDs.</li>
-      </ul>
-    </div>
-
-    <div class="modal-section">
-      <p class="modal-section-title">Architecture &amp; Flow Diagrams</p>
-      <div class="diagram-gallery">
-        <div class="diagram-item" onclick="openLightbox('assets/ratelimit-0.jpg')">
-          <img src="assets/ratelimit-0.jpg" alt="Rate Limiting Components" loading="lazy" />
-          <div class="diagram-caption">Component Architecture — 5-Layer Rate Limiting Design</div>
-        </div>
-        <div class="diagram-item" onclick="openLightbox('assets/ratelimit-1.jpg')">
-          <img src="assets/ratelimit-1.jpg" alt="Rate Limiting Sequence Diagram" loading="lazy" />
-          <div class="diagram-caption">Request Flow — ALLOW &amp; Rate-Limited (429) Sequence Diagram</div>
-        </div>
-        <div class="diagram-item" onclick="openLightbox('assets/ratelimit-2.jpg')">
-          <img src="assets/ratelimit-2.jpg" alt="ContainerRequestFilter implementation" loading="lazy" />
-          <div class="diagram-caption">JAX-RS ContainerRequestFilter — Rate Limit in Application Layer</div>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="ms">
+<p class="ms-lbl">Concrete Example</p>
+<p class="ms-body">A Fusion Payroll service wants to notify downstream modules when payroll is processed. The Payroll service (producer) calls <code>POST /v1/channel</code> → SubMgr creates a logical channel, ResMgr allocates partition capacity on OCI Streams, K8s Operator provisions the stream. The GL Accounting service (consumer) calls <code>POST /v1/subscription</code>. At runtime, Payroll publishes via the SPECTRA lib → DataDemux fans out to the OCI Stream → DataDemux delivers batches to GL Accounting on poll.</p>
 </div>
+
+<div class="ms">
+<p class="ms-lbl">Your Role</p>
+<div class="role-box">Designed and implemented the Subscription Manager service (channel/subscription lifecycle APIs), contributed to Resource Manager stream-allocation logic, and led the architecture evolution from single-tenant Phase-1 to the multi-tenant multiplexed design across v2–v4. Also owned the DataDemux consumer-routing layer and SPECTRA connector library integration patterns.</div>
+</div>
+
+<div class="ms">
+<p class="ms-lbl">Future Directions</p>
+<ul class="future-list">
+  <li>Cross-region replication of channel metadata to support active-active deployments</li>
+  <li>Consumer group semantics (Kafka-style group offsets) to allow competing-consumer patterns without client coordination</li>
+  <li>Observability dashboard exposing per-channel throughput, lag, and SLO burn rate to tenant teams</li>
+</ul>
+</div>
+
+<div class="ms">
+<p class="ms-lbl">FAQ</p>
+<div class="faq">
+  <div class="faq-item"><p class="faq-q">Why not let teams use OCI Streams directly?</p><p class="faq-a">Direct usage means each team manages IAM policies, stream provisioning, retention config, and DR themselves. SMS centralizes this, enforces SLOs uniformly, and enables features like multiplexing and rehydration that are impractical to build per-team.</p></div>
+  <div class="faq-item"><p class="faq-q">How is SMS different from Kafka?</p><p class="faq-a">SMS runs on top of OCI Streams (a Kafka-compatible managed service) and adds a higher-level abstraction: logical channels with named subscriptions, tenant-aware routing, and automatic stream lifecycle management. Clients see a REST + gRPC API, not raw Kafka protocol.</p></div>
+  <div class="faq-item"><p class="faq-q">What happens when OCI Streams is unavailable?</p><p class="faq-a">The data plane degrades gracefully — publishes queue in-memory with backpressure signaling. The Self-Recovery Monitoring Service detects stream loss and triggers automated remediation (see that project card).</p></div>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- ══════════ MODAL 2: Stream Multiplexing ══════════ -->
+<div class="overlay" id="overlay-mux">
+<div class="modal">
+<button class="modal-x" onclick="closeModal('mux')">✕</button>
+<p class="m-sub">Oracle · Spectra Messaging Service — v4 Architecture</p>
+<h2 class="m-title">Stream Multiplexing Engine</h2>
+
+<div class="ms">
+<p class="ms-lbl">Problem Statement</p>
+<p class="ms-body">In SMS v1–v2, each logical channel mapped 1:1 to a physical OCI Stream partition. OCI Streams are billed per-stream regardless of utilization, so a tenant with 100 low-traffic channels paid for 100 streams. As Fusion Applications scaled to thousands of channels across hundreds of tenants, stream costs exploded and OCI quota limits became a hard constraint. We needed to multiplex multiple channels onto shared physical streams without sacrificing isolation or throughput guarantees.</p>
+</div>
+
+<div class="ms">
+<p class="ms-lbl">Solution Principles</p>
+<ul class="num-list">
+  <li><span class="num">1</span><div><p class="nl-title">4-phase stream selection algorithm</p><p class="nl-desc">DB lookup → sorted pool traversal → O(1) quick capacity check → real-time dual-threshold analysis. Each phase is a progressively more expensive gate, so most decisions exit early.</p></div></li>
+  <li><span class="num">2</span><div><p class="nl-title">Dual-threshold utilization formula</p><p class="nl-desc">utilization = (allocated_bandwidth × 0.5) + actual_OCI_throughput. Both the calculated score and the measured utilization must stay below 80% for a stream to accept a new channel. This prevents both over-booking and hotspot formation.</p></div></li>
+  <li><span class="num">3</span><div><p class="nl-title">Merge Resource Manager into Subscription Manager</p><p class="nl-desc">Removed the gRPC hop between SubMgr and ResMgr. Channel creation now calls OCI SDK directly: REST → ChannelService → OCI SDK. Simpler error handling, lower latency, no serialization overhead.</p></div></li>
+  <li><span class="num">4</span><div><p class="nl-title">Virtual partitioning (3ⁿ expansion)</p><p class="nl-desc">Each physical partition expands to 3ⁿ virtual partitions. A tenant needing more throughput re-partitions without provisioning new streams. The multiplexing algorithm re-maps virtual → physical transparently.</p></div></li>
+</ul>
+</div>
+
+<div class="ms">
+<p class="ms-lbl">Architecture</p>
+<div class="diag">
+<svg viewBox="0 0 760 340" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif">
+<defs><marker id="ah1" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#64748b"/></marker>
+<marker id="ah1r" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#dc2626"/></marker>
+<marker id="ah1g" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#16a34a"/></marker></defs>
+
+<!-- BEFORE panel -->
+<rect x="4" y="4" width="230" height="150" rx="8" fill="#fef2f2" stroke="#fecaca" stroke-width="1.5"/>
+<text x="119" y="20" text-anchor="middle" font-size="9" font-weight="700" fill="#dc2626" letter-spacing="1">BEFORE (v1) · 1 channel : 1 stream</text>
+<rect x="16" y="30" width="68" height="30" rx="5" fill="#fff" stroke="#f87171" stroke-width="1.5"/>
+<text x="50" y="50" text-anchor="middle" font-size="10" font-weight="600" fill="#dc2626">Channel A</text>
+<rect x="16" y="72" width="68" height="30" rx="5" fill="#fff" stroke="#f87171" stroke-width="1.5"/>
+<text x="50" y="92" text-anchor="middle" font-size="10" font-weight="600" fill="#dc2626">Channel B</text>
+<rect x="16" y="114" width="68" height="30" rx="5" fill="#fff" stroke="#f87171" stroke-width="1.5"/>
+<text x="50" y="134" text-anchor="middle" font-size="10" font-weight="600" fill="#dc2626">Channel C</text>
+<line x1="84" y1="45" x2="110" y2="45" stroke="#f87171" stroke-width="1.5" marker-end="url(#ah1r)"/>
+<line x1="84" y1="87" x2="110" y2="87" stroke="#f87171" stroke-width="1.5" marker-end="url(#ah1r)"/>
+<line x1="84" y1="129" x2="110" y2="129" stroke="#f87171" stroke-width="1.5" marker-end="url(#ah1r)"/>
+<rect x="110" y="30" width="110" height="30" rx="5" fill="#dc2626"/>
+<text x="165" y="50" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">Stream-1 (idle)</text>
+<rect x="110" y="72" width="110" height="30" rx="5" fill="#dc2626"/>
+<text x="165" y="92" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">Stream-2 (idle)</text>
+<rect x="110" y="114" width="110" height="30" rx="5" fill="#dc2626"/>
+<text x="165" y="134" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">Stream-3 (idle)</text>
+<text x="119" y="148" text-anchor="middle" font-size="8" fill="#dc2626">3 streams billed, low utilization</text>
+
+<!-- AFTER panel -->
+<rect x="250" y="4" width="230" height="150" rx="8" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1.5"/>
+<text x="365" y="20" text-anchor="middle" font-size="9" font-weight="700" fill="#15803d" letter-spacing="1">AFTER (v4) · N channels : M streams</text>
+<rect x="262" y="30" width="68" height="30" rx="5" fill="#fff" stroke="#22c55e" stroke-width="1.5"/>
+<text x="296" y="50" text-anchor="middle" font-size="10" font-weight="600" fill="#15803d">Channel A</text>
+<rect x="262" y="72" width="68" height="30" rx="5" fill="#fff" stroke="#22c55e" stroke-width="1.5"/>
+<text x="296" y="92" text-anchor="middle" font-size="10" font-weight="600" fill="#15803d">Channel B</text>
+<rect x="262" y="114" width="68" height="30" rx="5" fill="#fff" stroke="#22c55e" stroke-width="1.5"/>
+<text x="296" y="134" text-anchor="middle" font-size="10" font-weight="600" fill="#15803d">Channel C</text>
+<line x1="330" y1="45" x2="356" y2="55" stroke="#22c55e" stroke-width="1.5" marker-end="url(#ah1g)"/>
+<line x1="330" y1="87" x2="356" y2="75" stroke="#22c55e" stroke-width="1.5" marker-end="url(#ah1g)"/>
+<line x1="330" y1="129" x2="356" y2="105" stroke="#22c55e" stroke-width="1.5" marker-end="url(#ah1g)"/>
+<rect x="356" y="52" width="110" height="64" rx="5" fill="#15803d"/>
+<text x="411" y="80" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">Stream-1</text>
+<text x="411" y="96" text-anchor="middle" font-size="9" fill="#bbf7d0">A + B + C multiplexed</text>
+<text x="411" y="111" text-anchor="middle" font-size="8" fill="#bbf7d0">utilization 72% ✓</text>
+<text x="365" y="148" text-anchor="middle" font-size="8" fill="#15803d">1 stream, cost ÷3, high utilization</text>
+
+<!-- 4-PHASE ALGORITHM -->
+<rect x="4" y="168" width="752" height="168" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="380" y="183" text-anchor="middle" font-size="9" font-weight="700" fill="#475569" letter-spacing="1">4-PHASE STREAM SELECTION ALGORITHM</text>
+
+<!-- Phase boxes -->
+<rect x="16" y="192" width="160" height="70" rx="6" fill="#fff" stroke="#3b82f6" stroke-width="2"/>
+<text x="96" y="210" text-anchor="middle" font-size="10" font-weight="700" fill="#1d4ed8">① DB Lookup</text>
+<text x="96" y="225" text-anchor="middle" font-size="8.5" fill="#374151">Fetch stream pool</text>
+<text x="96" y="240" text-anchor="middle" font-size="8.5" fill="#374151">sorted by allocated</text>
+<text x="96" y="254" text-anchor="middle" font-size="8.5" fill="#374151">bandwidth ↑</text>
+<line x1="176" y1="227" x2="194" y2="227" stroke="#64748b" stroke-width="1.5" marker-end="url(#ah1)"/>
+
+<rect x="194" y="192" width="160" height="70" rx="6" fill="#fff" stroke="#3b82f6" stroke-width="2"/>
+<text x="274" y="210" text-anchor="middle" font-size="10" font-weight="700" fill="#1d4ed8">② Pool Traversal</text>
+<text x="274" y="225" text-anchor="middle" font-size="8.5" fill="#374151">Walk least→most</text>
+<text x="274" y="240" text-anchor="middle" font-size="8.5" fill="#374151">allocated; find</text>
+<text x="274" y="254" text-anchor="middle" font-size="8.5" fill="#374151">candidate streams</text>
+<line x1="354" y1="227" x2="372" y2="227" stroke="#64748b" stroke-width="1.5" marker-end="url(#ah1)"/>
+
+<rect x="372" y="192" width="180" height="70" rx="6" fill="#fff" stroke="#3b82f6" stroke-width="2"/>
+<text x="462" y="210" text-anchor="middle" font-size="10" font-weight="700" fill="#1d4ed8">③ Quick Capacity Check</text>
+<text x="462" y="225" text-anchor="middle" font-size="8.5" fill="#374151">O(1) early exit: if least-</text>
+<text x="462" y="240" text-anchor="middle" font-size="8.5" fill="#374151">allocated can't fit → reject</text>
+<text x="462" y="254" text-anchor="middle" font-size="8.5" fill="#374151">without metrics fetch</text>
+<line x1="552" y1="227" x2="570" y2="227" stroke="#64748b" stroke-width="1.5" marker-end="url(#ah1)"/>
+
+<rect x="570" y="192" width="178" height="70" rx="6" fill="#1d4ed8"/>
+<text x="659" y="210" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">④ Metrics Analysis</text>
+<text x="659" y="225" text-anchor="middle" font-size="8.5" fill="#bfdbfe">score = alloc×0.5 + live</text>
+<text x="659" y="240" text-anchor="middle" font-size="8.5" fill="#bfdbfe">OCI throughput metrics</text>
+<text x="659" y="254" text-anchor="middle" font-size="8.5" fill="#bfdbfe">Both score &amp; actual &lt; 80%</text>
+
+<!-- reject label -->
+<text x="462" y="275" text-anchor="middle" font-size="8" fill="#dc2626">↑ reject early (no OCI API call)</text>
+<text x="659" y="278" text-anchor="middle" font-size="8" fill="#16a34a">→ ALLOCATE stream ✓</text>
+</svg>
+<p class="diag-cap">Top: before vs. after multiplexing · Bottom: 4-phase stream selection algorithm</p>
+</div>
+</div>
+
+<div class="ms">
+<p class="ms-lbl">Concrete Example</p>
+<p class="ms-body">Tenant Pepsi has channels A, B, and C each requesting 200 KB/s. Stream-1 has 1 MB/s capacity and is already at 400 KB/s allocated. Phase ①: DB returns [Stream-1 (400KB), Stream-2 (900KB)]. Phase ②: Stream-1 is the candidate. Phase ③: 400+200=600 &lt; 1000 KB/s — quick check passes. Phase ④: actual OCI throughput on Stream-1 is 350 KB/s; score = (400×0.5)+350 = 550, utilization = 55% &lt; 80% → ALLOCATE Channel C onto Stream-1.</p>
+</div>
+
+<div class="ms">
+<p class="ms-lbl">Your Role</p>
+<div class="role-box">Designed the 4-phase selection algorithm from scratch, including the dual-threshold utilization formula and the O(1) early-exit optimization. Led the architectural decision to merge Resource Manager into Subscription Manager, eliminating the gRPC hop. Implemented the virtual partitioning expansion (3ⁿ) and the channel-to-stream mapping update API in Phase-2.</div>
+</div>
+
+<div class="ms">
+<p class="ms-lbl">Future Directions</p>
+<ul class="future-list">
+  <li>Predictive pre-warming — use historical channel growth patterns to pre-allocate stream capacity before quota exhaustion</li>
+  <li>Per-tenant SLA tiers — premium tenants get dedicated streams; standard tenants share multiplexed streams</li>
+  <li>Dynamic rebalancing — periodically re-evaluate channel-to-stream mappings to correct imbalances that accumulate over time</li>
+</ul>
+</div>
+
+<div class="ms">
+<p class="ms-lbl">FAQ</p>
+<div class="faq">
+  <div class="faq-item"><p class="faq-q">How do you prevent one noisy tenant from starving others on a shared stream?</p><p class="faq-a">The dual-threshold formula uses actual OCI throughput — if a tenant bursts, the measured utilization rises above 80% and the stream becomes ineligible for new channels. Per-tenant write-bandwidth alerts trigger before sustained overuse reaches the shared stream's saturation point.</p></div>
+  <div class="faq-item"><p class="faq-q">What happens to in-flight messages during virtual partition expansion?</p><p class="faq-a">The channel must be deactivated before partition count changes — consumers drain existing messages, then the channel is reactivated with the new partition mapping. The Update Channel API (Phase-2) enforces this lifecycle gate.</p></div>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- ══════════ MODAL 3: Rehydration ══════════ -->
+<div class="overlay" id="overlay-rehy">
+<div class="modal">
+<button class="modal-x" onclick="closeModal('rehy')">✕</button>
+<p class="m-sub">Oracle · Spectra Messaging Service — 26.07 Release</p>
+<h2 class="m-title">Object Storage Auto-Rehydration</h2>
+
+<div class="ms">
+<p class="ms-lbl">Problem Statement</p>
+<p class="ms-body">The SMS control plane stores the critical mapping between logical channels and physical OCI Stream OCIDs exclusively in object storage buckets. When a bucket is accidentally deleted — through operator error, regional DR failover, or data corruption — the control plane fails catastrophically: channel creation, publish, and consume all break. The data plane continues unaffected (it uses a config map, not object storage), creating an asymmetric outage that is hard to diagnose. Without auto-rehydration, recovery required hours of manual intervention and risked permanent data loss.</p>
+</div>
+
+<div class="ms">
+<p class="ms-lbl">Solution Principles</p>
+<ul class="num-list">
+  <li><span class="num">1</span><div><p class="nl-title">Marker-file sentinel for reset detection</p><p class="nl-desc">On startup, CtrlDemux writes a db.marker file to object storage containing the RocksDB instance ID. If the file is absent on next startup, a bucket loss or RocksDB reset is confirmed and rehydration triggers automatically.</p></div></li>
+  <li><span class="num">2</span><div><p class="nl-title">FADB as the source of truth</p><p class="nl-desc">The Fusion Application Database (FADB) holds channel attributes, partition config, and consumer subscription state. Rehydration reads from FADB and pushes the reconstructed mapping back to object storage — no manual data entry required.</p></div></li>
+  <li><span class="num">3</span><div><p class="nl-title">Per-subscription and batch rehydration paths</p><p class="nl-desc">Consumer table rehydration runs per-subscription (for targeted repair) or in batch (for full bucket recovery). The DataDemux DR event listener triggers batch rehydration on failover events from OCI DR tooling.</p></div></li>
+  <li><span class="num">4</span><div><p class="nl-title">Zero-intervention recovery</p><p class="nl-desc">The entire flow is fully automated. Operator action is only required to initiate a DR failover — the rehydration pipeline handles all downstream state reconstruction without tickets or runbooks.</p></div></li>
+</ul>
+</div>
+
+<div class="ms">
+<p class="ms-lbl">Architecture</p>
+<div class="diag">
+<svg viewBox="0 0 760 330" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif">
+<defs><marker id="ah2" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#64748b"/></marker>
+<marker id="ah2r" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#dc2626"/></marker>
+<marker id="ah2g" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#16a34a"/></marker></defs>
+
+<!-- STATE 1: Normal -->
+<rect x="4" y="4" width="228" height="230" rx="8" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1.5"/>
+<text x="118" y="20" text-anchor="middle" font-size="9" font-weight="700" fill="#15803d" letter-spacing="1">STATE 1 · NORMAL</text>
+<rect x="16" y="30" width="200" height="42" rx="6" fill="#15803d"/>
+<text x="116" y="48" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">FADB</text>
+<text x="116" y="63" text-anchor="middle" font-size="8.5" fill="#bbf7d0">Channel attrs · Partition config · Subscriptions</text>
+<line x1="116" y1="72" x2="116" y2="96" stroke="#64748b" stroke-width="1.5" marker-end="url(#ah2)"/>
+<text x="128" y="88" font-size="8" fill="#64748b">sync</text>
+<rect x="16" y="96" width="200" height="42" rx="6" fill="#fff" stroke="#22c55e" stroke-width="1.5"/>
+<text x="116" y="115" text-anchor="middle" font-size="11" font-weight="700" fill="#15803d">Object Storage Bucket</text>
+<text x="116" y="130" text-anchor="middle" font-size="8.5" fill="#166534">Channel→OCID mapping · db.marker ✓</text>
+<line x1="116" y1="138" x2="116" y2="162" stroke="#64748b" stroke-width="1.5" marker-end="url(#ah2)"/>
+<rect x="16" y="162" width="200" height="42" rx="6" fill="#fff" stroke="#22c55e" stroke-width="1.5"/>
+<text x="116" y="181" text-anchor="middle" font-size="11" font-weight="700" fill="#15803d">CtrlDemux</text>
+<text x="116" y="196" text-anchor="middle" font-size="8.5" fill="#166534">Reads mapping on startup · Serves requests</text>
+<text x="118" y="222" text-anchor="middle" font-size="8" fill="#15803d">✓ Control plane fully operational</text>
+
+<!-- STATE 2: Failure -->
+<rect x="248" y="4" width="228" height="230" rx="8" fill="#fef2f2" stroke="#fecaca" stroke-width="1.5"/>
+<text x="362" y="20" text-anchor="middle" font-size="9" font-weight="700" fill="#dc2626" letter-spacing="1">STATE 2 · BUCKET LOST</text>
+<rect x="260" y="30" width="200" height="42" rx="6" fill="#15803d"/>
+<text x="360" y="48" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">FADB</text>
+<text x="360" y="63" text-anchor="middle" font-size="8.5" fill="#bbf7d0">Channel attrs · Partition config · Subscriptions</text>
+<line x1="360" y1="72" x2="360" y2="96" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4,3"/>
+<text x="372" y="88" font-size="8" fill="#dc2626">LOST</text>
+<!-- X over bucket -->
+<rect x="260" y="96" width="200" height="42" rx="6" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+<text x="360" y="115" text-anchor="middle" font-size="11" font-weight="700" fill="#dc2626">Object Storage</text>
+<text x="360" y="130" text-anchor="middle" font-size="8.5" fill="#dc2626">Bucket deleted — mapping GONE</text>
+<line x1="265" y1="101" x2="455" y2="133" stroke="#dc2626" stroke-width="2"/>
+<line x1="455" y1="101" x2="265" y2="133" stroke="#dc2626" stroke-width="2"/>
+<line x1="360" y1="138" x2="360" y2="162" stroke="#dc2626" stroke-width="1.5" marker-end="url(#ah2r)"/>
+<rect x="260" y="162" width="200" height="42" rx="6" fill="#fff" stroke="#dc2626" stroke-width="1.5"/>
+<text x="360" y="181" text-anchor="middle" font-size="11" font-weight="700" fill="#dc2626">CtrlDemux</text>
+<text x="360" y="196" text-anchor="middle" font-size="8.5" fill="#dc2626">No db.marker → reset detected!</text>
+<text x="362" y="222" text-anchor="middle" font-size="8" fill="#dc2626">✗ Control plane broken · data plane OK</text>
+
+<!-- STATE 3: Recovery -->
+<rect x="492" y="4" width="264" height="230" rx="8" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.5"/>
+<text x="624" y="20" text-anchor="middle" font-size="9" font-weight="700" fill="#1d4ed8" letter-spacing="1">STATE 3 · AUTO-REHYDRATION</text>
+<rect x="504" y="30" width="240" height="42" rx="6" fill="#15803d"/>
+<text x="624" y="48" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">FADB</text>
+<text x="624" y="63" text-anchor="middle" font-size="8.5" fill="#bbf7d0">Source of truth — always intact</text>
+<line x1="624" y1="72" x2="624" y2="96" stroke="#1d4ed8" stroke-width="2" marker-end="url(#ah2)"/>
+<text x="638" y="88" font-size="8" fill="#1d4ed8">① read</text>
+<rect x="504" y="96" width="240" height="56" rx="6" fill="#1d4ed8"/>
+<text x="624" y="116" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">Rehydration Pipeline</text>
+<text x="624" y="131" text-anchor="middle" font-size="8.5" fill="#bfdbfe">② Reconstruct channel→OCID mapping</text>
+<text x="624" y="145" text-anchor="middle" font-size="8.5" fill="#bfdbfe">③ Push back to new Object Storage bucket</text>
+<line x1="624" y1="152" x2="624" y2="176" stroke="#1d4ed8" stroke-width="2" marker-end="url(#ah2g)"/>
+<text x="638" y="168" font-size="8" fill="#1d4ed8">④ restore</text>
+<rect x="504" y="176" width="240" height="42" rx="6" fill="#fff" stroke="#22c55e" stroke-width="2"/>
+<text x="624" y="195" text-anchor="middle" font-size="11" font-weight="700" fill="#15803d">Object Storage (restored)</text>
+<text x="624" y="210" text-anchor="middle" font-size="8.5" fill="#166534">Mapping rebuilt · New db.marker written ✓</text>
+<text x="624" y="226" text-anchor="middle" font-size="8" fill="#1d4ed8">✓ Control plane restored — zero manual steps</text>
+
+<!-- Arrows between states -->
+<line x1="232" y1="180" x2="248" y2="180" stroke="#dc2626" stroke-width="1.5" marker-end="url(#ah2r)"/>
+<text x="240" y="172" text-anchor="middle" font-size="8" fill="#dc2626">fail</text>
+<line x1="476" y1="180" x2="492" y2="180" stroke="#1d4ed8" stroke-width="1.5" marker-end="url(#ah2)"/>
+<text x="484" y="172" text-anchor="middle" font-size="8" fill="#1d4ed8">auto</text>
+
+<!-- Trigger sources -->
+<rect x="4" y="252" width="752" height="74" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="380" y="268" text-anchor="middle" font-size="9" font-weight="700" fill="#475569" letter-spacing="1">REHYDRATION TRIGGERS</text>
+<rect x="16" y="278" width="155" height="38" rx="6" fill="#fff" stroke="#94a3b8" stroke-width="1.5"/>
+<text x="93" y="295" text-anchor="middle" font-size="10" font-weight="700" fill="#334155">Startup Detection</text>
+<text x="93" y="309" text-anchor="middle" font-size="8.5" fill="#64748b">db.marker absent → trigger</text>
+<rect x="183" y="278" width="155" height="38" rx="6" fill="#fff" stroke="#94a3b8" stroke-width="1.5"/>
+<text x="260" y="295" text-anchor="middle" font-size="10" font-weight="700" fill="#334155">DR Failover Event</text>
+<text x="260" y="309" text-anchor="middle" font-size="8.5" fill="#64748b">DataDemux DR listener → batch</text>
+<rect x="350" y="278" width="155" height="38" rx="6" fill="#fff" stroke="#94a3b8" stroke-width="1.5"/>
+<text x="427" y="295" text-anchor="middle" font-size="10" font-weight="700" fill="#334155">Operator Error</text>
+<text x="427" y="309" text-anchor="middle" font-size="8.5" fill="#64748b">CtrlDemux DR event → rehydrate</text>
+<rect x="517" y="278" width="235" height="38" rx="6" fill="#fff" stroke="#94a3b8" stroke-width="1.5"/>
+<text x="634" y="295" text-anchor="middle" font-size="10" font-weight="700" fill="#334155">Manual API Call</text>
+<text x="634" y="309" text-anchor="middle" font-size="8.5" fill="#64748b">POST /rehydrate for per-subscription repair</text>
+</svg>
+<p class="diag-cap">Three states: normal operation → bucket loss → auto-rehydration from FADB source of truth</p>
+</div>
+</div>
+
+<div class="ms">
+<p class="ms-lbl">Concrete Example</p>
+<p class="ms-body">During a quarterly DR drill, the OCI object storage bucket for the SMS control plane in region PHX is deleted as part of the failover procedure. CtrlDemux in the standby region (ASH) starts up and checks for db.marker — it's absent. The startup rehydration pipeline fires: it reads all rows from SMS_MT_CHANNEL_DEFS in FADB (channel name, OCID, retention, partition count), reconstructs the physical channel mapping JSON, and writes it to a new bucket in ASH. It then reads SMS_MT_Consumers to rebuild subscription-to-offset mappings. Total recovery time: ~90 seconds, zero operator intervention.</p>
+</div>
+
+<div class="ms">
+<p class="ms-lbl">Your Role</p>
+<div class="role-box">Designed the marker-file sentinel pattern and the full rehydration pipeline architecture. Implemented physical channel rehydration (FADB read → object storage write) and the consumer table rehydration gRPC endpoint on CtrlDemux. Defined the three trigger modes (startup, DR event, manual API) and wrote the runbook that became the automated recovery flow.</div>
+</div>
+
+<div class="ms">
+<p class="ms-lbl">Future Directions</p>
+<ul class="future-list">
+  <li>Periodic bucket integrity checks — proactively detect partial corruption before a full outage occurs</li>
+  <li>Cross-region bucket replication as a faster recovery path than full rehydration from FADB</li>
+  <li>Rehydration progress API so operators can monitor recovery status in real-time during DR events</li>
+</ul>
+</div>
+
+<div class="ms">
+<p class="ms-lbl">FAQ</p>
+<div class="faq">
+  <div class="faq-item"><p class="faq-q">Why store the OCID mapping only in object storage and not FADB?</p><p class="faq-a">FADB is the FA governance database — it's not designed for high-frequency read access by the data plane. Object storage provides fast, durable key-value lookups at the read volumes the control plane needs. FADB remains the source of truth for channel configuration, feeding the rehydration pipeline when needed.</p></div>
+  <div class="faq-item"><p class="faq-q">Can rehydration cause duplicate message delivery?</p><p class="faq-a">No. Rehydration only restores the channel-to-stream mapping and consumer subscription metadata. The actual message data lives in OCI Streams partitions, which are unaffected by bucket loss. After rehydration, consumers resume from their last committed offset stored in RocksDB, not from the beginning.</p></div>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- ══════════ MODAL 4: Rate Limiting ══════════ -->
+<div class="overlay" id="overlay-rl">
+<div class="modal">
+<button class="modal-x" onclick="closeModal('rl')">✕</button>
+<p class="m-sub">Oracle · Spectra Messaging Service</p>
+<h2 class="m-title">API Rate Limiting Framework</h2>
+
+<div class="ms">
+<p class="ms-lbl">Problem Statement</p>
+<p class="ms-body">SMS is a shared multi-tenant service. A single tenant making excessive control plane API calls — channel creation bursts, subscription polling, or misconfigured SDK retry storms — could exhaust thread pools and degrade performance for all other tenants. No rate-limit enforcement existed at the API layer; the only protection was Kubernetes HPA, which reacts too slowly to traffic spikes. We needed per-customer, per-endpoint enforcement with sub-millisecond overhead and zero coordination between replicas.</p>
+</div>
+
+<div class="ms">
+<p class="ms-lbl">Solution Principles</p>
+<ul class="num-list">
+  <li><span class="num">1</span><div><p class="nl-title">Intercept at the application boundary</p><p class="nl-desc">JAX-RS ContainerRequestFilter runs before every request on every replica. It extracts customer-id, channel name, and subscription ID from the URI path, then determines which rate-limit policy applies.</p></div></li>
+  <li><span class="num">2</span><div><p class="nl-title">Token bucket via in-process Caffeine cache</p><p class="nl-desc">Each rate-limit key (customer + api-group + method) maps to a token bucket stored in a Caffeine cache (TTL 300s). No Redis, no network round-trip — atomic increments stay in-process for sub-millisecond decisions.</p></div></li>
+  <li><span class="num">3</span><div><p class="nl-title">Declarative policy store</p><p class="nl-desc">Policies are defined in YAML under Helm values: scope (customer + path prefix + method), requests_per_second, and burst. Operators can tune limits per customer tier without code changes — just a Helm upgrade.</p></div></li>
+  <li><span class="num">4</span><div><p class="nl-title">Graceful signaling on denial</p><p class="nl-desc">On DENY, the filter returns HTTP 429 with Retry-After and X-RateLimit-Reset headers so SDKs can back off correctly. This prevents retry storms from making the problem worse.</p></div></li>
+</ul>
+</div>
+
+<div class="ms">
+<p class="ms-lbl">Architecture</p>
+<div class="diag">
+<svg viewBox="0 0 760 360" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif">
+<defs><marker id="ah3" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#64748b"/></marker>
+<marker id="ah3g" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#16a34a"/></marker>
+<marker id="ah3r" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#dc2626"/></marker></defs>
+
+<!-- Main request flow column -->
+<!-- Layer 1: Client -->
+<rect x="260" y="8" width="240" height="44" rx="6" fill="#1e40af"/>
+<text x="380" y="26" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">Consumer / Producer Client</text>
+<text x="380" y="42" text-anchor="middle" font-size="9" fill="#bfdbfe">HTTP request: GET /v1/channel/{name} · customer-id header</text>
+<line x1="380" y1="52" x2="380" y2="76" stroke="#64748b" stroke-width="1.5" marker-end="url(#ah3)"/>
+
+<!-- Layer 2: Ingress -->
+<rect x="260" y="76" width="240" height="44" rx="6" fill="#fff" stroke="#94a3b8" stroke-width="1.5"/>
+<text x="380" y="95" text-anchor="middle" font-size="12" font-weight="700" fill="#334155">Ingress / API Gateway</text>
+<text x="380" y="110" text-anchor="middle" font-size="9" fill="#64748b">Traefik · blanket rate limit per ingress route</text>
+<line x1="380" y1="120" x2="380" y2="144" stroke="#64748b" stroke-width="1.5" marker-end="url(#ah3)"/>
+
+<!-- Layer 3: ContainerRequestFilter -->
+<rect x="200" y="144" width="360" height="68" rx="6" fill="#fff" stroke="#3b82f6" stroke-width="2"/>
+<text x="380" y="162" text-anchor="middle" font-size="12" font-weight="700" fill="#1d4ed8">ContainerRequestFilter</text>
+<text x="380" y="178" text-anchor="middle" font-size="9" fill="#374151">① Parse URI → extract customer-id, path, method</text>
+<text x="380" y="192" text-anchor="middle" font-size="9" fill="#374151">② Build rate-limit key: customer + apiGroup + method</text>
+<text x="380" y="206" text-anchor="middle" font-size="9" fill="#374151">③ Lookup policy → check/consume token from cache</text>
+
+<!-- Side boxes -->
+<rect x="4" y="154" width="186" height="56" rx="6" fill="#fff" stroke="#94a3b8" stroke-width="1.5"/>
+<text x="97" y="175" text-anchor="middle" font-size="11" font-weight="700" fill="#334155">Policy Store</text>
+<text x="97" y="190" text-anchor="middle" font-size="8.5" fill="#64748b">YAML / Helm values</text>
+<text x="97" y="204" text-anchor="middle" font-size="8.5" fill="#64748b">scope · rps · burst</text>
+<line x1="190" y1="182" x2="200" y2="182" stroke="#64748b" stroke-width="1.5" marker-end="url(#ah3)"/>
+
+<rect x="570" y="154" width="186" height="56" rx="6" fill="#fff" stroke="#94a3b8" stroke-width="1.5"/>
+<text x="663" y="175" text-anchor="middle" font-size="11" font-weight="700" fill="#334155">Caffeine Cache</text>
+<text x="663" y="190" text-anchor="middle" font-size="8.5" fill="#64748b">Token bucket per key</text>
+<text x="663" y="204" text-anchor="middle" font-size="8.5" fill="#64748b">TTL 300s · atomic ops</text>
+<line x1="560" y1="182" x2="570" y2="182" stroke="#64748b" stroke-width="1.5" marker-end="url(#ah3)"/>
+
+<!-- Decision diamond (simplified as rect) -->
+<line x1="380" y1="212" x2="380" y2="240" stroke="#64748b" stroke-width="1.5" marker-end="url(#ah3)"/>
+<rect x="300" y="240" width="160" height="36" rx="18" fill="#f8fafc" stroke="#64748b" stroke-width="1.5"/>
+<text x="380" y="263" text-anchor="middle" font-size="11" font-weight="700" fill="#334155">ALLOW or DENY?</text>
+
+<!-- ALLOW path -->
+<line x1="300" y1="258" x2="200" y2="280" stroke="#16a34a" stroke-width="1.5" marker-end="url(#ah3g)"/>
+<text x="240" y="273" text-anchor="middle" font-size="9" fill="#16a34a">ALLOW</text>
+<rect x="80" y="280" width="200" height="50" rx="6" fill="#fff" stroke="#22c55e" stroke-width="1.5"/>
+<text x="180" y="300" text-anchor="middle" font-size="11" font-weight="700" fill="#15803d">Business Logic</text>
+<text x="180" y="315" text-anchor="middle" font-size="8.5" fill="#166534">Request processed · 200 OK</text>
+<text x="180" y="328" text-anchor="middle" font-size="8" fill="#22c55e">X-RateLimit-Remaining: 47</text>
+
+<!-- DENY path -->
+<line x1="460" y1="258" x2="560" y2="280" stroke="#dc2626" stroke-width="1.5" marker-end="url(#ah3r)"/>
+<text x="520" y="273" text-anchor="middle" font-size="9" fill="#dc2626">DENY</text>
+<rect x="480" y="280" width="200" height="50" rx="6" fill="#fff" stroke="#dc2626" stroke-width="1.5"/>
+<text x="580" y="300" text-anchor="middle" font-size="11" font-weight="700" fill="#dc2626">429 Too Many Requests</text>
+<text x="580" y="315" text-anchor="middle" font-size="8.5" fill="#dc2626">Retry-After: 12s</text>
+<text x="580" y="328" text-anchor="middle" font-size="8" fill="#dc2626">X-RateLimit-Reset: 1718000000</text>
+
+<!-- Observability -->
+<rect x="200" y="344" width="360" height="12" rx="3" fill="#f1f5f9"/>
+<text x="380" y="354" text-anchor="middle" font-size="8" fill="#64748b">Metrics: allowed/limited per customer · path · status · Alerts: top offenders · backend latency p95/p99</text>
+</svg>
+<p class="diag-cap">Request flow through 4 layers: Ingress → ContainerRequestFilter → Policy + Token Bucket → Allow/Deny</p>
+</div>
+</div>
+
+<div class="ms">
+<p class="ms-lbl">Concrete Example</p>
+<p class="ms-body">Tenant "Pepsi" has a misconfigured SDK that retries channel-get every 10ms. The policy for <code>customer=pepsi + /channel/ + GET</code> allows 10 rps with burst 20. After 20 requests hit Caffeine's token bucket in rapid succession, tokens are exhausted. The ContainerRequestFilter returns 429 with Retry-After: 8s. The SDK backs off. Meanwhile, other tenants on the same replica are completely unaffected — their buckets are independent keys in the Caffeine cache.</p>
+</div>
+
+<div class="ms">
+<p class="ms-lbl">Your Role</p>
+<div class="role-box">Designed the ContainerRequestFilter interception pattern, the rate-limit key schema (customer + apiGroup + method), and the Caffeine-backed token bucket implementation. Defined the YAML policy store schema under Helm values and implemented path-prefix matching with method-specific override support. Set up the p95/p99 alerting pipeline for top offenders and backend latency.</div>
+</div>
+
+<div class="ms">
+<p class="ms-lbl">Future Directions</p>
+<ul class="future-list">
+  <li>Distributed rate limiting via a shared Coherence/OCI Cache cluster to enforce limits across all replicas simultaneously (current per-replica buckets allow N-replica burst)</li>
+  <li>Dynamic policy updates without Helm redeploy — watch a ConfigMap and reload limits at runtime</li>
+  <li>Graduated throttling — slow down requests progressively (e.g. add artificial delay) before hard-denying to improve SDK behavior</li>
+</ul>
+</div>
+
+<div class="ms">
+<p class="ms-lbl">FAQ</p>
+<div class="faq">
+  <div class="faq-item"><p class="faq-q">Why Caffeine instead of Redis for the token bucket?</p><p class="faq-a">Redis adds a network round-trip (1–5ms) per request, which is significant overhead for a filter that runs on every API call. Caffeine is in-process with nanosecond atomic operations. The tradeoff is that limits are enforced per-replica rather than globally — a tenant on 3 replicas can burst at 3× the stated limit. This is acceptable given our replicas handle ~1/3 of traffic each; we document this behavior and plan distributed enforcement as a future upgrade.</p></div>
+  <div class="faq-item"><p class="faq-q">What's the performance impact on the normal request path?</p><p class="faq-a">Measured overhead is &lt;0.1ms per request — dominated by URI path parsing, not the Caffeine lookup. The filter exits early on ALLOW without any additional I/O. We verified no measurable impact on p99 latency in load tests at 2,000 rps.</p></div>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- ══════════ MODAL 5: NACK ══════════ -->
+<div class="overlay" id="overlay-nack">
+<div class="modal">
+<button class="modal-x" onclick="closeModal('nack')">✕</button>
+<p class="m-sub">Oracle · Spectra Messaging Service</p>
+<h2 class="m-title">NACK — Message Redelivery</h2>
+
+<div class="ms">
+<p class="ms-lbl">Problem Statement</p>
+<p class="ms-body">SMS consumers fetch message batches from DataDemux via gRPC. If a consumer processes a batch and crashes mid-way — or explicitly detects a business-logic failure — those messages were silently lost. There was no mechanism to signal "I did not process this batch, please redeliver." Upstream Fusion Applications require at-least-once delivery guarantees; without NACK support, engineers worked around this with expensive application-level idempotency layers that duplicated offset tracking.</p>
+</div>
+
+<div class="ms">
+<p class="ms-lbl">Solution Principles</p>
+<ul class="num-list">
+  <li><span class="num">1</span><div><p class="nl-title">Checkpoint at delivery, not acknowledgement</p><p class="nl-desc">When DataDemux delivers a batch, it saves the batch offset to a checkpoint table in RocksDB before returning the response. This ensures the "last delivered batch" is always recoverable, even if the consumer crashes immediately after receiving it.</p></div></li>
+  <li><span class="num">2</span><div><p class="nl-title">NACK triggers RocksDB lookup and redeliver</p><p class="nl-desc">On receiving a NACK, DataDemux fetches the last non-committed batch from the RocksDB checkpoint table for that consumer and returns it as the response to the next getMsg call — no round-trip to OCI Streams required.</p></div></li>
+  <li><span class="num">3</span><div><p class="nl-title">internalAck timing change</p><p class="nl-desc">Previously, internalAck was streamed before the Msgs response (optimistic). NACK semantics require internalAck to be sent after the consumer receives the batch — otherwise a mid-delivery crash would advance the internal offset and make NACK impossible.</p></div></li>
+  <li><span class="num">4</span><div><p class="nl-title">MsgAsyncQueue work item</p><p class="nl-desc">On NACK, a demuxBatch work item is enqueued in MsgAsyncQueue with prevBatch = deliveredBatch. The next getMsg call dequeues this item and returns prevBatch, providing a seamless redelivery experience to the consumer.</p></div></li>
+</ul>
+</div>
+
+<div class="ms">
+<p class="ms-lbl">Architecture</p>
+<div class="diag">
+<svg viewBox="0 0 760 320" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif">
+<defs><marker id="ah4" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#64748b"/></marker>
+<marker id="ah4g" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#16a34a"/></marker>
+<marker id="ah4r" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#dc2626"/></marker>
+<marker id="ah4o" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#d97706"/></marker></defs>
+
+<!-- HAPPY PATH lane -->
+<rect x="4" y="4" width="368" height="312" rx="8" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1.5"/>
+<text x="188" y="20" text-anchor="middle" font-size="9" font-weight="700" fill="#15803d" letter-spacing="1">HAPPY PATH · ACK</text>
+
+<rect x="16" y="30" width="100" height="38" rx="6" fill="#1e40af"/>
+<text x="66" y="45" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">Consumer</text>
+<text x="66" y="59" text-anchor="middle" font-size="8" fill="#bfdbfe">getMsg()</text>
+
+<rect x="148" y="30" width="110" height="38" rx="6" fill="#fff" stroke="#22c55e" stroke-width="1.5"/>
+<text x="203" y="47" text-anchor="middle" font-size="10" font-weight="700" fill="#15803d">DataDemux</text>
+<text x="203" y="61" text-anchor="middle" font-size="8" fill="#166534">fetch + deliver</text>
+
+<rect x="272" y="30" width="88" height="38" rx="6" fill="#fff" stroke="#22c55e" stroke-width="1.5"/>
+<text x="316" y="47" text-anchor="middle" font-size="10" font-weight="700" fill="#15803d">RocksDB</text>
+<text x="316" y="61" text-anchor="middle" font-size="8" fill="#166534">checkpoint</text>
+
+<line x1="116" y1="49" x2="148" y2="49" stroke="#64748b" stroke-width="1.5" marker-end="url(#ah4)"/>
+<line x1="258" y1="49" x2="272" y2="49" stroke="#64748b" stroke-width="1.5" marker-end="url(#ah4)"/>
+<text x="265" y="44" text-anchor="middle" font-size="7.5" fill="#64748b">save offset</text>
+
+<!-- Step 2: deliver batch -->
+<line x1="148" y1="68" x2="116" y2="98" stroke="#16a34a" stroke-width="1.5" marker-end="url(#ah4g)"/>
+<text x="70" y="90" text-anchor="middle" font-size="8" fill="#16a34a">① Batch N delivered</text>
+<rect x="16" y="98" width="100" height="38" rx="6" fill="#1e40af"/>
+<text x="66" y="115" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">Consumer</text>
+<text x="66" y="129" text-anchor="middle" font-size="8" fill="#bfdbfe">processes OK</text>
+
+<!-- Step 3: ACK -->
+<line x1="116" y1="117" x2="148" y2="117" stroke="#16a34a" stroke-width="1.5" marker-end="url(#ah4g)"/>
+<text x="132" y="112" text-anchor="middle" font-size="8" fill="#16a34a">② ACK</text>
+<rect x="148" y="98" width="110" height="38" rx="6" fill="#fff" stroke="#22c55e" stroke-width="1.5"/>
+<text x="203" y="115" text-anchor="middle" font-size="10" font-weight="700" fill="#15803d">DataDemux</text>
+<text x="203" y="129" text-anchor="middle" font-size="8" fill="#166534">advance offset</text>
+
+<!-- Step 4: next batch -->
+<line x1="258" y1="117" x2="272" y2="117" stroke="#16a34a" stroke-width="1.5" marker-end="url(#ah4g)"/>
+<text x="265" y="112" text-anchor="middle" font-size="7.5" fill="#16a34a">update</text>
+<rect x="272" y="98" width="88" height="38" rx="6" fill="#fff" stroke="#22c55e" stroke-width="1.5"/>
+<text x="316" y="115" text-anchor="middle" font-size="10" font-weight="700" fill="#15803d">RocksDB</text>
+<text x="316" y="129" text-anchor="middle" font-size="8" fill="#166534">offset N+1</text>
+
+<text x="188" y="160" text-anchor="middle" font-size="9" fill="#15803d">Next getMsg → Batch N+1</text>
+<rect x="30" y="170" width="328" height="36" rx="6" fill="#dcfce7" stroke="#22c55e" stroke-width="1"/>
+<text x="194" y="184" text-anchor="middle" font-size="10" font-weight="600" fill="#15803d">Offset advances normally</text>
+<text x="194" y="198" text-anchor="middle" font-size="8.5" fill="#166534">At-most-once risk managed by consumer idempotency</text>
+
+<!-- NACK PATH lane -->
+<rect x="388" y="4" width="368" height="312" rx="8" fill="#fff7ed" stroke="#fed7aa" stroke-width="1.5"/>
+<text x="572" y="20" text-anchor="middle" font-size="9" font-weight="700" fill="#c2410c" letter-spacing="1">NACK PATH · REDELIVERY</text>
+
+<rect x="400" y="30" width="100" height="38" rx="6" fill="#1e40af"/>
+<text x="450" y="45" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">Consumer</text>
+<text x="450" y="59" text-anchor="middle" font-size="8" fill="#bfdbfe">getMsg()</text>
+
+<rect x="522" y="30" width="110" height="38" rx="6" fill="#fff" stroke="#f97316" stroke-width="1.5"/>
+<text x="577" y="47" text-anchor="middle" font-size="10" font-weight="700" fill="#c2410c">DataDemux</text>
+<text x="577" y="61" text-anchor="middle" font-size="8" fill="#9a3412">fetch + deliver</text>
+
+<rect x="648" y="30" width="96" height="38" rx="6" fill="#fff" stroke="#f97316" stroke-width="1.5"/>
+<text x="696" y="47" text-anchor="middle" font-size="10" font-weight="700" fill="#c2410c">RocksDB</text>
+<text x="696" y="61" text-anchor="middle" font-size="8" fill="#9a3412">checkpoint</text>
+
+<line x1="500" y1="49" x2="522" y2="49" stroke="#64748b" stroke-width="1.5" marker-end="url(#ah4)"/>
+<line x1="632" y1="49" x2="648" y2="49" stroke="#64748b" stroke-width="1.5" marker-end="url(#ah4)"/>
+<text x="640" y="44" text-anchor="middle" font-size="7.5" fill="#64748b">save offset N</text>
+
+<!-- Deliver batch -->
+<line x1="522" y1="68" x2="500" y2="98" stroke="#d97706" stroke-width="1.5" marker-end="url(#ah4o)"/>
+<text x="452" y="90" text-anchor="middle" font-size="8" fill="#d97706">① Batch N delivered</text>
+<rect x="400" y="98" width="100" height="38" rx="6" fill="#1e40af"/>
+<text x="450" y="115" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">Consumer</text>
+<text x="450" y="129" text-anchor="middle" font-size="8" fill="#ef4444">✗ processing failed</text>
 
 <!-- NACK -->
-<div class="modal-overlay" id="modal-nack">
-  <div class="modal">
-    <button class="modal-close" onclick="closeModal('nack')">✕</button>
-    <h2>NACK — Message Redelivery Support</h2>
-    <p class="modal-subtitle">Oracle · Spectra Messaging Service</p>
+<line x1="500" y1="117" x2="522" y2="117" stroke="#dc2626" stroke-width="1.5" marker-end="url(#ah4r)"/>
+<text x="511" y="111" text-anchor="middle" font-size="8" fill="#dc2626">② NACK</text>
+<rect x="522" y="98" width="110" height="38" rx="6" fill="#fff" stroke="#f97316" stroke-width="1.5"/>
+<text x="577" y="115" text-anchor="middle" font-size="10" font-weight="700" fill="#c2410c">DataDemux</text>
+<text x="577" y="129" text-anchor="middle" font-size="8" fill="#9a3412">enqueue prevBatch=N</text>
 
-    <div class="modal-section">
-      <p class="modal-section-title">Problem</p>
-      <p class="modal-text">SMS consumers previously had no way to signal message processing failures. If a consumer crashed mid-batch or failed to process a message group, those messages were effectively lost — there was no redelivery mechanism. This violated at-least-once delivery guarantees required by upstream Fusion Applications.</p>
-    </div>
+<!-- RocksDB lookup -->
+<line x1="648" y1="117" x2="632" y2="117" stroke="#dc2626" stroke-width="1.5" marker-end="url(#ah4r)"/>
+<text x="640" y="111" text-anchor="middle" font-size="7.5" fill="#dc2626">③ lookup</text>
+<rect x="648" y="98" width="96" height="38" rx="6" fill="#fff" stroke="#f97316" stroke-width="1.5"/>
+<text x="696" y="115" text-anchor="middle" font-size="10" font-weight="700" fill="#c2410c">RocksDB</text>
+<text x="696" y="129" text-anchor="middle" font-size="8" fill="#9a3412">read offset N</text>
 
-    <div class="modal-section">
-      <p class="modal-section-title">Design</p>
-      <ul class="modal-bullets">
-        <li><strong>Handling GetMessage Requests:</strong> When DataDemux delivers a batch to a consumer, it saves the last non-committed batch offset into a checkpoint table in RocksDB at delivery time.</li>
-        <li><strong>Handling NACK Requests:</strong> On receiving a NACK, DataDemux creates a gRPC request to CtrlDemux to fetch the last non-committed batch from RocksDB for that consumer, then delivers it back as the response to the next getMsg call.</li>
-        <li><strong>MsgAsyncQueue:</strong> A demuxBatch work item is queued when NACK arrives. <code>prevBatch = deliveredBatch</code> is set so the next getMsg sequence returns <code>prevBatch</code> instead of advancing the offset.</li>
-        <li><strong>internalAck change:</strong> internalAck is now streamed after (not before) the Msgs response so NACK semantics are consistent — consumers can NACK a batch they have already received but not yet processed.</li>
-        <li><strong>Offset Semantics:</strong> Any sequence of getMsg calls should return <code>currentBatch</code>. Only on a successful ack does the offset advance.</li>
-      </ul>
-    </div>
+<!-- Redeliver -->
+<line x1="522" y1="136" x2="500" y2="165" stroke="#d97706" stroke-width="1.5" stroke-dasharray="4,2" marker-end="url(#ah4o)"/>
+<text x="450" y="158" text-anchor="middle" font-size="8" fill="#d97706">④ redeliver Batch N</text>
+<rect x="400" y="165" width="100" height="38" rx="6" fill="#1e40af"/>
+<text x="450" y="182" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">Consumer</text>
+<text x="450" y="196" text-anchor="middle" font-size="8" fill="#bfdbfe">retry processing</text>
 
-    <div class="modal-section">
-      <p class="modal-section-title">Flow Diagrams</p>
-      <div class="diagram-gallery">
-        <div class="diagram-item" onclick="openLightbox('assets/nack-0.jpg')">
-          <img src="assets/nack-0.jpg" alt="NACK sequence diagram" loading="lazy" />
-          <div class="diagram-caption">NACK Sequence — getMsg / internalAck / MsgAsyncQueue Flow</div>
-        </div>
-        <div class="diagram-item" onclick="openLightbox('assets/nack-1.jpg')">
-          <img src="assets/nack-1.jpg" alt="NACK design flow text" loading="lazy" />
-          <div class="diagram-caption">NACK Design — Sequence Description (PlantUML source)</div>
-        </div>
-        <div class="diagram-item" onclick="openLightbox('assets/nack-2.jpg')">
-          <img src="assets/nack-2.jpg" alt="NACK design v2 steps" loading="lazy" />
-          <div class="diagram-caption">NACK Design v2 — GetMessage &amp; NACK Handling Steps</div>
-        </div>
-      </div>
-    </div>
-  </div>
+<text x="572" y="222" text-anchor="middle" font-size="9" fill="#c2410c">Offset stays at N until ACK received</text>
+<rect x="406" y="232" width="340" height="50" rx="6" fill="#fff3e0" stroke="#fb923c" stroke-width="1"/>
+<text x="576" y="250" text-anchor="middle" font-size="10" font-weight="600" fill="#c2410c">At-Least-Once Delivery Guaranteed</text>
+<text x="576" y="267" text-anchor="middle" font-size="8.5" fill="#9a3412">prevBatch redelivered until consumer sends ACK</text>
+<text x="576" y="280" text-anchor="middle" font-size="8" fill="#9a3412">internalAck sent after batch received (not before)</text>
+</svg>
+<p class="diag-cap">Left: normal ACK path — offset advances. Right: NACK path — batch N redelivered from RocksDB checkpoint.</p>
+</div>
 </div>
 
-<!-- Self-Recovery -->
-<div class="modal-overlay" id="modal-recovery">
-  <div class="modal">
-    <button class="modal-close" onclick="closeModal('recovery')">✕</button>
-    <h2>Self-Recovery Monitoring Service</h2>
-    <p class="modal-subtitle">Oracle · Spectra Messaging Service</p>
-
-    <div class="modal-section">
-      <p class="modal-section-title">Problem</p>
-      <p class="modal-text">SMS cluster failures (stream loss, data corruption, service restarts) previously required manual operator intervention. Each failure mode had its own ad-hoc runbook. There was no unified framework to detect anomalies and automatically execute recovery steps, leading to extended downtime and operational burden.</p>
-    </div>
-
-    <div class="modal-section">
-      <p class="modal-section-title">Design Principles</p>
-      <ul class="modal-bullets">
-        <li>False positives are strictly avoided — recovery actions only trigger on confirmed anomalies.</li>
-        <li>Recovery actions move through a <strong>code-based state machine</strong> (pipeline) to prevent multiple simultaneous actions.</li>
-        <li>State is persisted to FADB so recovery can be restarted if the monitoring service itself fails.</li>
-        <li><strong>Pluggable framework</strong> — simple interfaces for adding new recovery actions and events without modifying core logic.</li>
-      </ul>
-    </div>
-
-    <div class="modal-section">
-      <p class="modal-section-title">9-Stage Recovery Flow</p>
-      <ul class="modal-bullets">
-        <li><strong>Stage 1–2:</strong> Scale down data-plane services (DataDemux, CtrlDemux); detect stream loss and trigger OSS stream re-provisioning.</li>
-        <li><strong>Stage 3–4:</strong> Sub-Mgr cleans up abstract channels without partitions; Res-Mgr repopulates subscriptions into Object Storage.</li>
-        <li><strong>Stage 5–6:</strong> Subscription cleanup (synchronous); Sub-Mgr retrieves subscription list from FADB and passes to Res-Mgr.</li>
-        <li><strong>Stage 7:</strong> Consumer-side cleanup — Data-Demux rehydrates Metadata RocksDB, recalculates offsets in FADB and RocksDB, invalidates consumers to decoupled state.</li>
-        <li><strong>Stage 8:</strong> Restart API; confirm Kubernetes readiness check.</li>
-        <li><strong>Stage 9:</strong> Declare recovery success, halt state machine.</li>
-      </ul>
-    </div>
-
-    <div class="modal-section">
-      <p class="modal-section-title">Architecture &amp; Flow Diagrams</p>
-      <div class="diagram-gallery">
-        <div class="diagram-item" onclick="openLightbox('assets/recovery-0.jpg')">
-          <img src="assets/recovery-0.jpg" alt="Self-Recovery Service Architecture" loading="lazy" />
-          <div class="diagram-caption">Self-Recovery Monitoring Service — Component Architecture</div>
-        </div>
-        <div class="diagram-item" onclick="openLightbox('assets/recovery-1.jpg')">
-          <img src="assets/recovery-1.jpg" alt="Recovery Stage Details" loading="lazy" />
-          <div class="diagram-caption">Recovery Flow — Stage 6–9 &amp; State Machine Contracts</div>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="ms">
+<p class="ms-lbl">Concrete Example</p>
+<p class="ms-body">The GL Accounting service fetches Batch N (10 payroll messages). After processing 7 messages, a downstream DB connection fails. The consumer calls NACK. DataDemux sees prevBatch=N in MsgAsyncQueue. The next getMsg response returns Batch N again from the RocksDB checkpoint. The consumer retries, completes successfully, and sends ACK. DataDemux updates the offset to N+1. The 3 messages that were already processed are re-processed — consumers must be idempotent, but no messages are lost.</p>
 </div>
 
-<!-- Lightbox -->
-<div class="lightbox" id="lightbox" onclick="closeLightbox()">
-  <img id="lightbox-img" src="" alt="" />
+<div class="ms">
+<p class="ms-lbl">Your Role</p>
+<div class="role-box">Designed the NACK semantics end-to-end: checkpoint-at-delivery pattern, RocksDB lookup on NACK, MsgAsyncQueue work item structure, and the internalAck timing fix. Implemented the DataDemux changes (checkpoint write, NACK handler, prevBatch dequeue logic) and the gRPC API contract changes for the NACK signal.</div>
+</div>
+
+<div class="ms">
+<p class="ms-lbl">Future Directions</p>
+<ul class="future-list">
+  <li>Dead-letter queue — after N consecutive NACKs on the same batch, route to a DLQ so poison messages don't block the consumer indefinitely</li>
+  <li>NACK with delay — allow consumers to request redelivery after a configurable backoff window (e.g. "retry in 30s") for transient failure handling</li>
+  <li>NACK metrics — track NACK rate per subscription to surface struggling consumers before they cause SLO breaches</li>
+</ul>
+</div>
+
+<div class="ms">
+<p class="ms-lbl">FAQ</p>
+<div class="faq">
+  <div class="faq-item"><p class="faq-q">How does NACK interact with multiple consumers on the same subscription?</p><p class="faq-a">Each consumer instance has an independent RocksDB checkpoint entry keyed by consumer-id. A NACK from consumer instance A only redelivers to A — it doesn't affect other consumer instances polling the same subscription. Each instance manages its own offset independently.</p></div>
+  <div class="faq-item"><p class="faq-q">What if the consumer NACKs forever (buggy consumer)?</p><p class="faq-a">Currently, redelivery is unbounded — this is intentional since the alternative (data loss) is worse for Fusion Applications. The dead-letter queue (planned future work) will cap retries and route stuck batches for manual inspection.</p></div>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- ══════════ MODAL 6: Self-Recovery ══════════ -->
+<div class="overlay" id="overlay-rec">
+<div class="modal">
+<button class="modal-x" onclick="closeModal('rec')">✕</button>
+<p class="m-sub">Oracle · Spectra Messaging Service</p>
+<h2 class="m-title">Self-Recovery Monitoring Service</h2>
+
+<div class="ms">
+<p class="ms-lbl">Problem Statement</p>
+<p class="ms-body">SMS cluster failures — OCI Stream loss, RocksDB corruption, service crashes — each had their own ad-hoc runbook requiring manual operator intervention. Recovery steps were error-prone, took 30–90 minutes, and required deep system knowledge. There was no unified framework to (a) detect anomalies early, (b) prevent simultaneous conflicting recovery actions, and (c) resume recovery if the monitoring service itself restarted mid-flow.</p>
+</div>
+
+<div class="ms">
+<p class="ms-lbl">Solution Principles</p>
+<ul class="num-list">
+  <li><span class="num">1</span><div><p class="nl-title">Code-based state machine for safe sequencing</p><p class="nl-desc">Recovery actions execute through a typed state machine pipeline. Only one recovery flow runs at a time. The current stage is persisted to FADB so recovery can resume from the correct stage after a monitoring service restart — not from the beginning.</p></div></li>
+  <li><span class="num">2</span><div><p class="nl-title">False-positive avoidance</p><p class="nl-desc">Before triggering recovery, the monitoring service verifies the anomaly from multiple signals (OCI metrics, K8s liveness, gRPC health checks). A single transient spike never triggers recovery — only sustained, confirmed failure states do.</p></div></li>
+  <li><span class="num">3</span><div><p class="nl-title">Pluggable event and action framework</p><p class="nl-desc">New failure modes are added by implementing a simple Event interface and attaching Action implementations to state transitions. No core state machine changes required — new scenarios extend the framework without risking existing recovery flows.</p></div></li>
+  <li><span class="num">4</span><div><p class="nl-title">Kubernetes readiness gate</p><p class="nl-desc">Recovery is only declared successful after all SMS pods pass the K8s readiness check. This ensures the control plane is actually serving traffic before alerting are cleared — not just that the recovery steps completed.</p></div></li>
+</ul>
+</div>
+
+<div class="ms">
+<p class="ms-lbl">Architecture</p>
+<div class="diag">
+<svg viewBox="0 0 760 350" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif">
+<defs><marker id="ah5" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#64748b"/></marker>
+<marker id="ah5b" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#2563eb"/></marker>
+<marker id="ah5g" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#16a34a"/></marker></defs>
+
+<!-- Monitoring service top bar -->
+<rect x="4" y="4" width="752" height="72" rx="8" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.5"/>
+<text x="380" y="20" text-anchor="middle" font-size="9" font-weight="700" fill="#1d4ed8" letter-spacing="1">MONITORING SERVICE</text>
+<rect x="16" y="28" width="108" height="40" rx="5" fill="#fff" stroke="#3b82f6" stroke-width="1.5"/>
+<text x="70" y="45" text-anchor="middle" font-size="9" font-weight="700" fill="#1d4ed8">SubMgr</text>
+<text x="70" y="58" text-anchor="middle" font-size="7.5" fill="#64748b">health poll</text>
+<rect x="138" y="28" width="108" height="40" rx="5" fill="#fff" stroke="#3b82f6" stroke-width="1.5"/>
+<text x="192" y="45" text-anchor="middle" font-size="9" font-weight="700" fill="#1d4ed8">ResMgr</text>
+<text x="192" y="58" text-anchor="middle" font-size="7.5" fill="#64748b">health poll</text>
+<rect x="260" y="28" width="108" height="40" rx="5" fill="#fff" stroke="#3b82f6" stroke-width="1.5"/>
+<text x="314" y="45" text-anchor="middle" font-size="9" font-weight="700" fill="#1d4ed8">DataDemux</text>
+<text x="314" y="58" text-anchor="middle" font-size="7.5" fill="#64748b">gRPC health</text>
+<rect x="382" y="28" width="108" height="40" rx="5" fill="#fff" stroke="#3b82f6" stroke-width="1.5"/>
+<text x="436" y="45" text-anchor="middle" font-size="9" font-weight="700" fill="#1d4ed8">CtrlDemux</text>
+<text x="436" y="58" text-anchor="middle" font-size="7.5" fill="#64748b">gRPC health</text>
+<rect x="504" y="28" width="108" height="40" rx="5" fill="#fff" stroke="#3b82f6" stroke-width="1.5"/>
+<text x="558" y="45" text-anchor="middle" font-size="9" font-weight="700" fill="#1d4ed8">OCI Streams</text>
+<text x="558" y="58" text-anchor="middle" font-size="7.5" fill="#64748b">stream metrics</text>
+<rect x="626" y="28" width="122" height="40" rx="5" fill="#fff" stroke="#3b82f6" stroke-width="1.5"/>
+<text x="687" y="45" text-anchor="middle" font-size="9" font-weight="700" fill="#1d4ed8">K8s Readiness</text>
+<text x="687" y="58" text-anchor="middle" font-size="7.5" fill="#64748b">pod health gate</text>
+
+<!-- Anomaly detected arrow -->
+<line x1="380" y1="76" x2="380" y2="98" stroke="#dc2626" stroke-width="2" marker-end="url(#ah5)"/>
+<text x="395" y="92" font-size="8.5" fill="#dc2626">anomaly confirmed</text>
+
+<!-- State machine box -->
+<rect x="4" y="98" width="312" height="60" rx="8" fill="#fff" stroke="#1e40af" stroke-width="2"/>
+<text x="160" y="117" text-anchor="middle" font-size="11" font-weight="700" fill="#1e40af">State Machine</text>
+<text x="160" y="132" text-anchor="middle" font-size="8.5" fill="#374151">Stage persisted to FADB · resumes after restart</text>
+<text x="160" y="147" text-anchor="middle" font-size="8.5" fill="#374151">One recovery flow at a time · pluggable actions</text>
+
+<!-- FADB -->
+<rect x="430" y="98" width="150" height="60" rx="8" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5"/>
+<text x="505" y="120" text-anchor="middle" font-size="11" font-weight="700" fill="#334155">FADB</text>
+<text x="505" y="135" text-anchor="middle" font-size="8.5" fill="#64748b">Recovery stage state</text>
+<text x="505" y="150" text-anchor="middle" font-size="8.5" fill="#64748b">persisted here</text>
+<line x1="316" y1="128" x2="430" y2="128" stroke="#64748b" stroke-width="1.5" stroke-dasharray="4,2" marker-end="url(#ah5)"/>
+<text x="373" y="122" text-anchor="middle" font-size="7.5" fill="#64748b">persist stage</text>
+
+<!-- 9 stage boxes -->
+<rect x="4" y="176" width="752" height="170" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="380" y="192" text-anchor="middle" font-size="9" font-weight="700" fill="#475569" letter-spacing="1">9-STAGE RECOVERY PIPELINE</text>
+
+<!-- Stages row 1 (1-5) -->
+<rect x="14" y="200" width="120" height="50" rx="5" fill="#fff" stroke="#3b82f6" stroke-width="1.5"/>
+<text x="74" y="219" text-anchor="middle" font-size="9" font-weight="700" fill="#1d4ed8">① Scale down</text>
+<text x="74" y="232" text-anchor="middle" font-size="7.5" fill="#374151">DataDemux</text>
+<text x="74" y="244" text-anchor="middle" font-size="7.5" fill="#374151">CtrlDemux</text>
+<line x1="134" y1="225" x2="148" y2="225" stroke="#64748b" stroke-width="1" marker-end="url(#ah5)"/>
+
+<rect x="148" y="200" width="120" height="50" rx="5" fill="#fff" stroke="#3b82f6" stroke-width="1.5"/>
+<text x="208" y="219" text-anchor="middle" font-size="9" font-weight="700" fill="#1d4ed8">② Stream repair</text>
+<text x="208" y="232" text-anchor="middle" font-size="7.5" fill="#374151">Detect stream loss</text>
+<text x="208" y="244" text-anchor="middle" font-size="7.5" fill="#374151">re-provision via OCI</text>
+<line x1="268" y1="225" x2="282" y2="225" stroke="#64748b" stroke-width="1" marker-end="url(#ah5)"/>
+
+<rect x="282" y="200" width="120" height="50" rx="5" fill="#fff" stroke="#3b82f6" stroke-width="1.5"/>
+<text x="342" y="219" text-anchor="middle" font-size="9" font-weight="700" fill="#1d4ed8">③ Channel cleanup</text>
+<text x="342" y="232" text-anchor="middle" font-size="7.5" fill="#374151">SubMgr removes</text>
+<text x="342" y="244" text-anchor="middle" font-size="7.5" fill="#374151">partitionless channels</text>
+<line x1="402" y1="225" x2="416" y2="225" stroke="#64748b" stroke-width="1" marker-end="url(#ah5)"/>
+
+<rect x="416" y="200" width="120" height="50" rx="5" fill="#fff" stroke="#3b82f6" stroke-width="1.5"/>
+<text x="476" y="219" text-anchor="middle" font-size="9" font-weight="700" fill="#1d4ed8">④ Subscriptions</text>
+<text x="476" y="232" text-anchor="middle" font-size="7.5" fill="#374151">ResMgr repopulates</text>
+<text x="476" y="244" text-anchor="middle" font-size="7.5" fill="#374151">into Object Storage</text>
+<line x1="536" y1="225" x2="550" y2="225" stroke="#64748b" stroke-width="1" marker-end="url(#ah5)"/>
+
+<rect x="550" y="200" width="120" height="50" rx="5" fill="#fff" stroke="#3b82f6" stroke-width="1.5"/>
+<text x="610" y="219" text-anchor="middle" font-size="9" font-weight="700" fill="#1d4ed8">⑤ Sub cleanup</text>
+<text x="610" y="232" text-anchor="middle" font-size="7.5" fill="#374151">SubMgr lists from</text>
+<text x="610" y="244" text-anchor="middle" font-size="7.5" fill="#374151">FADB → passes ResMgr</text>
+
+<!-- Stages row 2 (6-9) + continue arrow -->
+<line x1="670" y1="225" x2="686" y2="225" stroke="#64748b" stroke-width="1" marker-end="url(#ah5)"/>
+<rect x="686" y="200" width="60" height="50" rx="5" fill="#e0e7ff" stroke="#6366f1" stroke-width="1.5"/>
+<text x="716" y="228" text-anchor="middle" font-size="8" font-weight="700" fill="#4338ca">cont.</text>
+<text x="716" y="241" text-anchor="middle" font-size="7" fill="#4338ca">↓</text>
+
+<!-- Row 2 below -->
+<line x1="716" y1="250" x2="716" y2="262" stroke="#64748b" stroke-width="1" marker-end="url(#ah5)"/>
+<rect x="550" y="262" width="172" height="50" rx="5" fill="#fff" stroke="#3b82f6" stroke-width="1.5"/>
+<text x="636" y="279" text-anchor="middle" font-size="9" font-weight="700" fill="#1d4ed8">⑥–⑦ Consumer reset</text>
+<text x="636" y="292" text-anchor="middle" font-size="7.5" fill="#374151">DataDemux rehydrates RocksDB</text>
+<text x="636" y="305" text-anchor="middle" font-size="7.5" fill="#374151">recalculates offsets · decouples consumers</text>
+<line x1="550" y1="287" x2="534" y2="287" stroke="#64748b" stroke-width="1" marker-end="url(#ah5)"/>
+
+<rect x="370" y="262" width="160" height="50" rx="5" fill="#fff" stroke="#3b82f6" stroke-width="1.5"/>
+<text x="450" y="279" text-anchor="middle" font-size="9" font-weight="700" fill="#1d4ed8">⑧ Restart API</text>
+<text x="450" y="292" text-anchor="middle" font-size="7.5" fill="#374151">Scale up services</text>
+<text x="450" y="305" text-anchor="middle" font-size="7.5" fill="#374151">K8s readiness gate</text>
+<line x1="370" y1="287" x2="348" y2="287" stroke="#64748b" stroke-width="1" marker-end="url(#ah5)"/>
+
+<rect x="170" y="262" width="174" height="50" rx="5" fill="#1e40af"/>
+<text x="257" y="283" text-anchor="middle" font-size="9" font-weight="700" fill="#fff">⑨ Recovery declared</text>
+<text x="257" y="297" text-anchor="middle" font-size="7.5" fill="#bfdbfe">Halt state machine</text>
+<text x="257" y="310" text-anchor="middle" font-size="7.5" fill="#bfdbfe">Clear alerts · notify on-call ✓</text>
+</svg>
+<p class="diag-cap">Top: Monitoring Service polls all SMS components. Middle: State machine with FADB persistence. Bottom: 9-stage recovery pipeline.</p>
+</div>
+</div>
+
+<div class="ms">
+<p class="ms-lbl">Concrete Example</p>
+<p class="ms-body">At 2am, OCI Streams metrics show the stream backing tenant Pepsi's channels has zero throughput for 10 minutes. The Monitoring Service confirms: DataDemux gRPC health returns UNAVAILABLE, K8s liveness fails on 2 of 3 CtrlDemux pods. Stage ① scales down DataDemux and CtrlDemux. Stage ② detects stream loss, provisions a replacement OCI Stream via the K8s Operator. Stages ③–⑦ clean up stale state and rehydrate RocksDB. Stage ⑧ scales services back up; K8s readiness passes on all pods within 45 seconds. Stage ⑨ clears the alert and sends a Slack notification to on-call. Total downtime: ~4 minutes vs. 60+ minutes with manual runbooks.</p>
+</div>
+
+<div class="ms">
+<p class="ms-lbl">Your Role</p>
+<div class="role-box">Designed the state machine architecture and the FADB persistence contract for recovery stage resumability. Defined the pluggable Event/Action interface that allows new failure scenarios to be added without modifying the core pipeline. Implemented stages ③ (channel cleanup), ④–⑤ (subscription rehydration), and ⑨ (recovery declaration + alerting). Owned the false-positive avoidance logic using multi-signal confirmation.</div>
+</div>
+
+<div class="ms">
+<p class="ms-lbl">Future Directions</p>
+<ul class="future-list">
+  <li>ML-based anomaly detection to catch subtle degradation patterns (rising p99 latency, increasing NACK rates) before they become full outages</li>
+  <li>Automated chaos testing — weekly scheduled runs of the recovery pipeline against a staging cluster to validate each stage stays correct as the codebase evolves</li>
+  <li>Recovery playbook UI — real-time dashboard showing current stage, estimated completion, and manual override controls for operators who want to step through recovery interactively</li>
+</ul>
+</div>
+
+<div class="ms">
+<p class="ms-lbl">FAQ</p>
+<div class="faq">
+  <div class="faq-item"><p class="faq-q">What if the Monitoring Service itself crashes mid-recovery?</p><p class="faq-a">On restart, the Monitoring Service reads the last persisted recovery stage from FADB and resumes from that stage. Each stage is idempotent — re-running a completed stage is safe. The K8s liveness check on the Monitoring Service itself fails if recovery state is corrupt, triggering a pod restart that re-enters the pipeline cleanly.</p></div>
+  <div class="faq-item"><p class="faq-q">How do you prevent the recovery from making things worse?</p><p class="faq-a">Stage ① deliberately scales down the affected services before any repair actions. This stops the bleeding and ensures repair steps operate on quiescent state — no in-flight requests racing with recovery logic. Stages execute sequentially; each must complete successfully before the next begins.</p></div>
+</div>
+</div>
+
+</div>
 </div>
 
 <script>
-  function openModal(id) {
-    document.getElementById('modal-' + id).classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-  function closeModal(id) {
-    document.getElementById('modal-' + id).classList.remove('open');
-    document.body.style.overflow = '';
-  }
-  function openLightbox(src) {
-    event.stopPropagation();
-    document.getElementById('lightbox-img').src = src;
-    document.getElementById('lightbox').classList.add('open');
-  }
-  function closeLightbox() {
-    document.getElementById('lightbox').classList.remove('open');
-  }
-  // Close modal on overlay click
-  document.querySelectorAll('.modal-overlay').forEach(overlay => {
-    overlay.addEventListener('click', e => {
-      if (e.target === overlay) {
-        overlay.classList.remove('open');
-        document.body.style.overflow = '';
-      }
-    });
-  });
-  // ESC to close
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') {
-      document.querySelectorAll('.modal-overlay.open').forEach(m => {
-        m.classList.remove('open');
-        document.body.style.overflow = '';
-      });
-      closeLightbox();
-    }
-  });
+function openModal(id){document.getElementById('overlay-'+id).classList.add('open');document.body.style.overflow='hidden'}
+function closeModal(id){document.getElementById('overlay-'+id).classList.remove('open');document.body.style.overflow=''}
+document.querySelectorAll('.overlay').forEach(o=>{o.addEventListener('click',e=>{if(e.target===o){o.classList.remove('open');document.body.style.overflow=''}})})
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){document.querySelectorAll('.overlay.open').forEach(o=>{o.classList.remove('open');document.body.style.overflow=''})}})
 </script>
 </body>
 </html>
